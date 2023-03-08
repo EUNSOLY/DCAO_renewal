@@ -38,6 +38,7 @@ img {
   display: flex;
   padding: 1rem 0;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .watch > p {
   padding: 0 2.5rem;
@@ -55,11 +56,9 @@ img {
   align-items: center;
   background-color: var(--colorWhite);
 }
-
 .logo {
-  border: 1px solid red;
+  width: 150px;
 }
-
 /* gnb st */
 .gnb {
   /* border: 1px solid red; */
@@ -70,7 +69,7 @@ img {
 }
 .gnb_list a {
   display: block;
-  padding: 1rem 4rem;
+  padding: 1rem 3vw;
   background-color: var(--colorWhite);
   position: relative;
   overflow: hidden;
@@ -116,6 +115,26 @@ img {
 .sub_gnb li:hover a {
   background-color: var(--colorNavy);
   color: var(--colorWhite);
+}
+.mypage {
+  display: flex;
+}
+.mypage_btn {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.mypage_btn:hover {
+  filter: grayscale(0.4);
+}
+.mypage_btn1 {
+  background-color: var(--colorYellow);
+  color: var(--colorNavy);
+}
+.mypage_btn2 {
+  background-color: var(--colorNavy);
+  color: #fff;
 }
 .M_nav {
   display: none;
