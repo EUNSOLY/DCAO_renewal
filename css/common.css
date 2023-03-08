@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* 눈누 폰트 */
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  color: var(--colorNavy);
+  font-family: "Noto Sans KR";
+  font-weight: normal;
+  font-size: 16px;
+  --colorBlack: #232323;
+  --colorWhite: #ffffff;
+  --colorGray: #d9d9d9;
+  --colorNavy: #284372;
+  --colorYellow: #ffd700;
+  --colorLYellow: #ffee92;
+  --colorRed: #ff3939;
+}
+img {
+  width: 100%;
+}
+.mx {
+  max-width: 1440px;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  border: 1px dotted red;
+}
+/* 상단안내 st */
+.watch_wrap {
+  background: url(../img/상단관람안내배경.png) no-repeat center / cover;
+  color: #fff;
+}
+.watch {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+}
+.watch > p {
+  padding: 0 2.5rem;
+}
+.watch_tit {
+  font-weight: 500;
+  color: var(--colorYellow);
+  padding-right: 0.5rem;
+}
+/* 헤더 st */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colorWhite);
+}
+
+.logo {
+  border: 1px solid red;
+}
+
+/* gnb st */
+.gnb {
+  /* border: 1px solid red; */
+  display: flex;
+}
+.gnb_list {
+  position: relative;
+}
+.gnb_list a {
+  display: block;
+  padding: 1rem 4rem;
+  background-color: var(--colorWhite);
+  position: relative;
+  overflow: hidden;
+}
+.gnb_list > a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 60%;
+  height: 1px;
+  background-color: var(--colorNavy);
+  transform: translate(-50%);
+}
+.gnb_list:hover > a {
+  font-weight: 500;
+}
+.gnb_list:hover > a::before {
+  bottom: 0;
+  left: 50%;
+  transition: 0.3s;
+}
+.sub_gnb {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.gnb_list:hover .sub_gnb {
+  height: 150px;
+  transition: 0.3s;
+}
+.sub_gnb li {
+}
+.sub_gnb li a {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  background-color: var(--colorWhite);
+}
+.sub_gnb li:hover a {
+  background-color: var(--colorNavy);
+  color: var(--colorWhite);
+}
+.M_nav {
+  display: none;
+}
