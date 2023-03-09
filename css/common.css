@@ -328,6 +328,7 @@ button {
   text-align: left;
   min-width: 200px;
   background-color: transparent;
+
   color: #fff;
   border: 1px solid var(--colorWhite);
   position: relative;
@@ -553,5 +554,8 @@ button {
   }
   .reservation_btn2::after {
     display: none;
+  }
+  .active {
+    border: 1px solid red;
   }
 }
