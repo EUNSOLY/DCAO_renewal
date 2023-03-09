@@ -34,7 +34,6 @@ img {
 .mx2 {
   max-width: 980px;
   margin: 0 auto;
-  border: 1px dashed dodgerblue;
 }
 
 /* 상단안내 st */
@@ -62,6 +61,7 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: var(--colorWhite);
+  padding-top: var(--gap2);
 }
 .logo {
   width: 150px;
@@ -80,7 +80,7 @@ img {
   content: "d";
   position: absolute;
   width: 400%;
-  padding-top: 0;
+  height: 0;
   /* padding-top: 15%; */
   overflow: hidden;
   top: 100%;
@@ -125,13 +125,14 @@ img {
   width: 100%;
   height: 0;
   overflow: hidden;
+  white-space: nowrap;
 }
 .gnb:hover .sub_gnb {
-  height: 150px;
+  height: 180px;
   transition: 0.3s;
 }
 .gnb:hover::before {
-  padding-top: 18%;
+  height: 250px;
   transition: 0.3s;
 }
 
@@ -171,7 +172,7 @@ img {
 }
 
 .main {
-  margin-top: var(--gap);
+  margin-top: var(--gap2);
   margin-bottom: var(--gap);
   background: url(../img/메인이미지.png) no-repeat center/ cover;
 }
@@ -281,6 +282,71 @@ img {
   top: 0;
   transform: translate(5%, 20%);
 }
+/* 3단 card 시작 */
+.list_wrap {
+  font-family: "S-CoreDream-3Light";
+  margin-top: calc(var(--gap) * 2);
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list {
+  background-color: #fff;
+}
+.list1 {
+  width: 25%;
+}
+.list_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.list_head > p {
+  display: flex;
+  align-items: center;
+}
+.list_head > p > img {
+  width: 25%;
+  margin-right: 0.25rem;
+}
+.head_btn {
+  display: flex;
+  cursor: pointer;
+}
+.head_btn img:first-child {
+  margin-right: 0.5rem;
+}
+.list_img {
+  position: relative;
+  padding-top: 65%;
+  overflow: hidden;
+}
+.list_img img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.listimg_tit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.8);
+  font-size: 1.5rem;
+  width: 100%;
+  font-weight: bold;
+}
+.listimg_tit span:nth-of-type(2) {
+  color: var(--colorYellow);
+  font-size: 2rem;
+}
 /* 푸터 st */
 .ft_wrap {
   background: url(../img/푸터배경.png) no-repeat center / cover;
@@ -358,7 +424,7 @@ button {
   background-color: var(--colorWhite);
   color: var(--colorNavy);
 }
-/* 자바스크립트 */
+
 .pt_Slist.active @media (max-width: 950px) {
   .watch {
     display: flex;
