@@ -62,6 +62,7 @@ img {
   align-items: center;
   background-color: var(--colorWhite);
   padding-top: var(--gap2);
+  white-space: nowrap;
 }
 .logo {
   width: 150px;
@@ -284,19 +285,22 @@ img {
 }
 /* 3단 card 시작 */
 .list_wrap {
-  font-family: "S-CoreDream-3Light";
   margin-top: calc(var(--gap) * 2);
   border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: center; */
 }
 .list {
   background-color: #fff;
 }
 .list1 {
   width: 25%;
+  align-self: flex-start;
 }
 .list_head {
+  font-family: "S-CoreDream-3Light";
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -306,7 +310,8 @@ img {
 }
 .list_head > p {
   display: flex;
-  align-items: center;
+  border: 1px solid red;
+  white-space: nowrap;
 }
 .list_head > p > img {
   width: 25%;
@@ -316,20 +321,36 @@ img {
   display: flex;
   cursor: pointer;
 }
+.head_btn img:hover:first-child {
+  filter: saturate(400%);
+}
+.head_btn img:hover:last-child {
+  filter: saturate(400%);
+}
 .head_btn img:first-child {
   margin-right: 0.5rem;
 }
 .list_img {
   position: relative;
-  padding-top: 65%;
+  /* padding-top: 65%; */
+  display: none;
   overflow: hidden;
 }
+
 .list_img img {
-  position: absolute;
-  top: 0;
-  width: 100%;
+  /* position: absolute; */
+  /* top: 0; */
+  width: 110%;
+  transition: 0.3s;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+.list1:hover .list_img img {
+  transform: scale(1.2);
 }
 .listimg_tit {
+  font-family: "S-CoreDream-3Light";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -343,10 +364,76 @@ img {
   width: 100%;
   font-weight: bold;
 }
+
+.list_img:last-of-type .listimg_tit {
+  flex-direction: row;
+  justify-content: center;
+}
 .listimg_tit span:nth-of-type(2) {
   color: var(--colorYellow);
   font-size: 2rem;
 }
+.list_imgB {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3단카드 2번째*/
+.list2,
+.list3 {
+  width: 35%;
+}
+.list2 .list_head {
+  border-bottom: 1px solid var(--colorNavy);
+}
+.notice_con {
+  padding: 0.5rem var(--gap2);
+}
+.notice {
+  display: flex;
+  position: relative;
+  padding: 0.5rem 0;
+}
+.notice > span:nth-child(2) {
+  width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+.notice > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+}
+.notice:hover {
+  background-color: #ffd70070;
+}
+
+/* 3단카드 3번쨰 */
+.facility_btncon {
+  display: flex;
+  flex-wrap: wrap;
+}
+.facility_btn {
+  width: 25%;
+  padding: 0.25rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid var(--colorNavy);
+}
+
+/* 3단카드 자바스크립트 */
+.list_img.active {
+  display: block;
+}
+
 /* 푸터 st */
 .ft_wrap {
   background: url(../img/푸터배경.png) no-repeat center / cover;
@@ -580,6 +667,15 @@ button {
     padding: 1rem 0;
     font-weight: 600;
     font-size: 1.25rem;
+  }
+  .list1,
+  .list2 {
+    width: 50%;
+    align-self: flex-start;
+  }
+
+  .list3 {
+    width: %;
   }
 }
 @media (max-width: 450px) {
