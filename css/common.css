@@ -25,18 +25,27 @@
 img {
   width: 100%;
 }
+
+.wrap {
+  overflow: hidden;
+}
+
 .mx {
   max-width: 1440px;
   width: calc(100% - 2rem);
   margin: 0 auto;
-  /* border: 1px dotted red; */
 }
 .mx2 {
   max-width: 980px;
   margin: 0 auto;
 }
 
+/* 헤더 st */
 /* 상단안내 st */
+header {
+  position: relative;
+  z-index: 100;
+}
 .watch_wrap {
   background: url(../img/상단관람안내배경.png) no-repeat center / cover;
   color: #fff;
@@ -55,7 +64,6 @@ img {
   color: var(--colorYellow);
   padding-right: 0.5vw;
 }
-/* 헤더 st */
 .header {
   display: flex;
   justify-content: space-between;
@@ -71,31 +79,32 @@ img {
   object-position: 0 5px;
 }
 /* gnb st */
+
+.gnb_hover_bg {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  transition: 0.3s;
+  background-color: #fff;
+}
+.gnb_wrap:hover ~ .gnb_hover_bg {
+  height: 150px;
+}
 .gnb {
-  /* border: 1px solid red; */
   display: flex;
   position: relative;
   z-index: 100;
 }
-.gnb::before {
-  content: "d";
-  position: absolute;
-  width: 400%;
-  height: 0;
-  /* padding-top: 15%; */
-  overflow: hidden;
-  top: 100%;
-  left: -200%;
-  background-color: #fff;
 
-  /* border: 1px solid red; */
-}
 .gnb_list {
   position: relative;
 }
 .gnb_list a {
   display: block;
-  padding: 1rem 3vw;
+  padding: 1rem 2rem;
   background-color: var(--colorWhite);
   position: relative;
   overflow: hidden;
@@ -130,11 +139,7 @@ img {
 }
 .gnb:hover .sub_gnb {
   height: 180px;
-  transition: 0.3s;
-}
-.gnb:hover::before {
-  height: 250px;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .sub_gnb li a {
@@ -152,8 +157,6 @@ img {
   display: flex;
 }
 .mypage_btn {
-  border: none;
-  outline: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
@@ -175,6 +178,7 @@ img {
 .main {
   margin-top: var(--gap2);
   margin-bottom: var(--gap);
+  padding-bottom: var(--gap);
   background: url(../img/메인이미지.png) no-repeat center/ cover;
 }
 
@@ -283,21 +287,22 @@ img {
   top: 0;
   transform: translate(5%, 20%);
 }
-/* 3단 card 시작 */
+/* 3단 카드 시작 */
 .list_wrap {
   margin-top: calc(var(--gap) * 2);
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* align-items: center; */
+  /* align-items: flex-start; */
 }
 .list {
   background-color: #fff;
 }
+/* 3단 카드 팝업존 */
 .list1 {
   width: 25%;
-  align-self: flex-start;
+  background-color: transparent;
 }
 .list_head {
   font-family: "S-CoreDream-3Light";
@@ -307,10 +312,11 @@ img {
   padding: 0.5rem 0.5rem;
   font-weight: bold;
   font-size: 1.25rem;
+  background-color: #fff;
 }
 .list_head > p {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   white-space: nowrap;
 }
 .list_head > p > img {
@@ -330,20 +336,29 @@ img {
 .head_btn img:first-child {
   margin-right: 0.5rem;
 }
-.list_img {
-  position: relative;
-  /* padding-top: 65%; */
-  display: none;
+.popzon_wrap {
   overflow: hidden;
+}
+.popzon {
+  display: flex;
+  width: 300%;
+  overflow: hidden;
+}
+.list_img {
+  width: calc(100% / 3);
+  height: calc(100% - 44px);
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.list_img:nth-of-type(3) ~ li {
+  display: none;
 }
 
 .list_img img {
-  /* position: absolute; */
-  /* top: 0; */
-  width: 110%;
+  height: 100%;
   transition: 0.3s;
   object-fit: cover;
-  transform: scale(1.1);
 }
 
 .list1:hover .list_img img {
@@ -360,31 +375,36 @@ img {
   align-items: center;
   color: #fff;
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.8);
-  font-size: 1.5rem;
+  font-size: 1em;
   width: 100%;
   font-weight: bold;
 }
 
-.list_img:last-of-type .listimg_tit {
+.listimg_tit span:nth-of-type(2) {
+  color: var(--colorYellow);
+  font-size: 1.5em;
+}
+.list_img3 .listimg_tit {
   flex-direction: row;
   justify-content: center;
 }
-.listimg_tit span:nth-of-type(2) {
-  color: var(--colorYellow);
-  font-size: 2rem;
+.list_img3 .listimg_tit span {
+  font-size: 1.5em;
 }
 .list_imgB {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
+  background-color: #ddd;
 }
 
-/* 3단카드 2번째*/
+/* 3단카드 공지사항*/
 .list2,
 .list3 {
   width: 35%;
 }
+
 .list2 .list_head {
   border-bottom: 1px solid var(--colorNavy);
 }
@@ -415,7 +435,8 @@ img {
   background-color: #ffd70070;
 }
 
-/* 3단카드 3번쨰 */
+/* 3단카드 시설안내 */
+
 .facility_btncon {
   display: flex;
   flex-wrap: wrap;
@@ -423,15 +444,90 @@ img {
 .facility_btn {
   width: 25%;
   padding: 0.25rem;
-  border: none;
-  outline: none;
   background-color: transparent;
   border: 1px solid var(--colorNavy);
+  cursor: pointer;
 }
-
+.facility_btn:hover {
+  font-weight: bold;
+  background-color: #4470bd;
+  color: #fff;
+}
+/* 자바스크립트 */
+.facility_btn.active {
+  background-color: var(--colorNavy);
+  color: #fff;
+  font-weight: bold;
+}
+.list3_content {
+  display: flex;
+}
+.list3_img {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  /* border: 1px solid red; */
+  padding-top: 50%;
+}
+.list3_img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  height: 100%;
+}
+.list3_text {
+  width: 50%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  letter-spacing: -1px;
+}
+.list3_text > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: 2px solid dodgerblue; */
+}
+.list_txt_2,
+.list_txt_3 {
+  width: 100%;
+}
+.list_txt_2 {
+  font-weight: bold;
+  border-bottom: 1px solid var(--colorNavy);
+}
+.list_txt_3 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
+}
+.list_txt_4 {
+  width: 60%;
+  /* border: 1px solid red; */
+}
+.list3_text > div > button {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+  background-color: var(--colorYellow);
+  color: var(--colorNavy);
+  letter-spacing: -2px;
+}
 /* 3단카드 자바스크립트 */
 .list_img.active {
   display: block;
+}
+.list3_text.active {
+  display: flex;
 }
 
 /* 푸터 st */
@@ -453,10 +549,14 @@ img {
   padding: 0.75rem;
   /* border: 1px solid red; */
 }
+
 .ft_logo {
   width: 150px;
   padding-top: 0.5rem;
   align-self: flex-start;
+}
+.pt_txt {
+  width: 75%;
 }
 .pt_txt > * {
   padding: 0.25rem 0;
@@ -470,10 +570,6 @@ img {
   line-height: 0.9;
   /* padding-top: 1rem; */
 }
-button {
-  border: none;
-  outline: none;
-}
 .pt_Slist {
   display: flex;
   flex-direction: column;
@@ -481,7 +577,6 @@ button {
   text-align: left;
   min-width: 200px;
   background-color: transparent;
-
   color: #fff;
   border: 1px solid var(--colorWhite);
   position: relative;
@@ -512,7 +607,7 @@ button {
   color: var(--colorNavy);
 }
 
-.pt_Slist.active @media (max-width: 950px) {
+@media (max-width: 950px) {
   .watch {
     display: flex;
     padding: 1rem 0;
@@ -530,6 +625,35 @@ button {
     cursor: pointer;
     font-size: 0.85rem;
   }
+
+  .list_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: flex-start;
+  }
+  .list1,
+  .list2,
+  .list3 {
+    width: 49%;
+    height: 100%;
+    /* align-self: flex-start; */
+  }
+  .list1 {
+    order: 2;
+  }
+  .list2 {
+    width: 100%;
+    margin-bottom: 2vw;
+  }
+
+  .notice > span:last-of-type {
+    width: 30%;
+    text-align: right;
+  }
+  .list_img3 .listimg_tit span {
+    font-size: 1.75rem;
+  }
 }
 @media (max-width: 860px) {
   .gnb {
@@ -540,7 +664,19 @@ button {
   }
   .M_nav {
     display: flex;
+    cursor: pointer;
     align-items: center;
+  }
+  .M_nav.active {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 1rem;
   }
 
   .logo img {
@@ -548,27 +684,33 @@ button {
   }
 
   .M_schedule {
-    /* border: 1px solid dodgerblue; */
     margin-right: 0.5rem;
     display: flex;
-    /* width: 55%; */
+    width: 30px;
+    height: 30px;
+  }
+
+  .M_nav.active .M_schedule {
+    width: 30px;
+    height: 30px;
+  }
+  .M_nav.active .M_btn {
     width: 30px;
     height: 30px;
   }
   .M_btn {
-    /* display: flex;border: 1px solid red; */
+    display: flex;
+    align-items: center;
     flex-direction: column;
     background-color: transparent;
     position: relative;
-    cursor: pointer;
-    padding: 0.5rem;
-    padding-top: 20%;
+    top: 0;
     width: 30px;
+    padding: 0.75rem 0;
   }
   .M_btn > * {
-    color: transparent;
     width: 100%;
-    height: 2px;
+    height: 3px;
     top: 0;
     left: 0;
     position: absolute;
@@ -588,22 +730,31 @@ button {
     top: 100%;
     transform: translate(0, -50%);
   }
+  .gnb_hover_bg {
+    display: none;
+  }
   /* 자바스크립트 nav */
   .gnb_wrap.active .gnb::before {
     display: none;
   }
   .gnb_wrap.active {
     position: fixed;
-    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    top: 0;
     right: 0;
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    bottom: 0;
     /* border: 10px solid violet; */
     background-color: #fff;
     z-index: 100;
   }
   .gnb_wrap.active .gnb {
-    display: block;
+    display: flex;
+    padding-top: 5rem;
+    flex-direction: column;
+    width: 100%;
   }
 
   .gnb_wrap.active .gnb_list {
@@ -611,26 +762,17 @@ button {
   }
   .gnb_wrap.active .gnb_list a {
     text-align: right;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    background-color: var(--colorNavy);
+    color: var(--colorWhite);
   }
   .gnb_wrap.active .sub_gnb {
-    position: sticky;
-    top: 100%;
-    left: 0;
-    width: 100%;
     display: none;
-    /* height: 0; */
-    overflow: hidden;
-    background-color: var(--colorNavy);
-    z-index: 200;
   }
   .gnb_wrap.active .gnb_list > a::before {
     display: none;
   }
 
-  .gnb_wrap.active .gnb_list:hover .sub_gnb {
-    display: block;
-  }
   .gnb_wrap.active .sub_gnb li a {
     padding: 0.5rem 1rem;
     text-align: center;
@@ -668,17 +810,70 @@ button {
     font-weight: 600;
     font-size: 1.25rem;
   }
-  .list1,
-  .list2 {
-    width: 50%;
-    align-self: flex-start;
+  .listimg_tit {
+    font-size: 1.25em;
   }
 
-  .list3 {
-    width: %;
+  .listimg_tit span:nth-of-type(2) {
+    font-size: 1.3em;
+  }
+  .ft_right .pt_txt {
+    display: none;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 720px) {
+  .facility_btncon {
+    flex-wrap: wrap;
+  }
+  .facility_btn {
+    width: 50%;
+  }
+
+  .list_txt_1 {
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .list_txt_3,
+  .list_txt_4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ft_con {
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .ft_short {
+    width: 100%;
+  }
+  .pt_Scon {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .pt_Slist {
+    min-width: 150px;
+    padding-right: 1.25rem;
+  }
+  .pt_Slist::after {
+    width: 10px;
+    height: 10px;
+  }
+  .pt_Slink {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    background-color: var(--colorNavy);
+    border: 1px solid var(--colorWhite);
+    display: none;
+  }
+}
+@media (max-width: 580px) {
   .watch {
     flex-direction: column;
     font-size: 0.85rem;
@@ -717,7 +912,45 @@ button {
   .reservation_btn2::after {
     display: none;
   }
-  .active {
+  .listimg_tit {
+    font-size: 1.25em;
+  }
+
+  .listimg_tit span:nth-of-type(2) {
+    font-size: 1.5em;
+  }
+
+  .list1,
+  .list2,
+  .list3 {
+    width: 100%;
+    margin-bottom: var(--gap);
+    border: 0.5px solid #fff;
+    /* align-self: flex-start; */
+  }
+  .list_txt_1 {
+    display: flex;
+  }
+  .list3_content {
+    flex-wrap: wrap;
+  }
+  .list3_img {
+    width: 100%;
+  }
+  .list3_text {
+    width: 100%;
+  }
+  .list3_text > div {
+    padding-top: 0.75rem;
+  }
+  .pt_Scon {
     border: 1px solid red;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+  }
+  .pt_Slist {
+    min-width: auto;
+    padding-right: 1.25rem;
   }
 }
