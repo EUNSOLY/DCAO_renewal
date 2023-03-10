@@ -63,4 +63,5 @@ $head_prev.addEventListener("click",()=>{
     $popzon.style.cssText = `margin-left:0px; transition:0.5s;`
   })
 })
+// 서브메뉴 슬라이딩 메뉴랑 바로가기 사이트
 
