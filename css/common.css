@@ -467,6 +467,7 @@ header {
   display: flex;
   height: calc(100% - 4.5rem);
 }
+/* 선생님께 물어보기 */
 .list3_img {
   width: 50%;
   overflow: hidden;
