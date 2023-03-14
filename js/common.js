@@ -96,6 +96,7 @@ function displayActive(item) {
     listP.classList.add("weather_tit");
     let listD = document.createElement("div");
     let weaterReady = item[0].weather;
+
     let text = "";
     let iconImg = "";
 
@@ -108,7 +109,8 @@ function displayActive(item) {
     } else if (
       weaterReady == "Partly Cloudy" ||
       weaterReady == "Cloudy" ||
-      weaterReady == "Very Cloudy"
+      weaterReady == "Very Cloudy" ||
+      weaterReady == "pcloudy"
     ) {
       // console.log("흐림");
       text = "흐림";

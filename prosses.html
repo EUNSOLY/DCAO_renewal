@@ -109,5 +109,86 @@
         </div>
       </div>
     </header>
+    <section class="main_v">
+      <img src="./img/processes_visualimg.png" alt="메인이미지" />
+      <p class="mian_v_tit">예약</p>
+      <nav class="prosses_tap mx">
+        <button class="on">관람예약</button>
+        <button>전시해설예약</button>
+        <button>특별프로그램예약</button>
+        <button>봉사활동예약</button>
+      </nav>
+    </section>
+    <main class="mx">
+      <form action="">
+        <nav class="prosses_choice">
+          <input type="radio" name="Choice" id="individual" />
+          <label for="individual" class="individual_txt">개인</label>
+          <input type="radio" name="Choice" id="group" />
+          <label for="group" class="group_txt">단체</label>
+        </nav>
+        <ul class="processes_con">
+          <li class="processes processes_1">
+            <h2 class="selection_tit">
+              날짜 및 회차선택<span class="processes_1_choice">2020200</span>
+            </h2>
+            <div class="calendar">d</div>
+            <div class="calendar_selection">
+              <ul class="selection_con">
+                <li class="selection_content_tit">
+                  <p>회차</p>
+                  <p>시간</p>
+                  <p>잔여/정원</p>
+                  <p>예약상태</p>
+                  <p>선택</p>
+                </li>
+                <li class="step step_1">
+                  <p>1회차</p>
+                  <p>15:00</p>
+                  <p>00/00</p>
+                  <button><span>예약가능</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+                <li class="step step_2">
+                  <p>2회차</p>
+                  <p>16:00</p>
+                  <p>00/00</p>
+                  <button><span>예약가능</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+                <li class="step step_3">
+                  <p>3회차</p>
+                  <p>17:00</p>
+                  <p>00/00</p>
+                  <button><span>예약가능</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+                <li class="step step_4">
+                  <p>4회차</p>
+                  <p>19:00</p>
+                  <p>00/00</p>
+                  <button><span>예약가능</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+                <li class="step step_5">
+                  <p>5회차</p>
+                  <p>20:00</p>
+                  <p>00/00</p>
+                  <button><span>예약가능</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+                <li class="step step_6">
+                  <p>6회차</p>
+                  <p>21:00</p>
+                  <p>00/00</p>
+                  <button><span class="full">예약완료</span></button>
+                  <p><input type="checkbox" name="step_choice" /></p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </main>
   </body>
 </html>

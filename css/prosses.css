@@ -32,3 +32,121 @@ img {
   width: calc(100% - 2rem);
   margin: 0 auto;
 }
+
+.main_v {
+  position: relative;
+}
+.mian_v_tit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "S-CoreDream-3Light";
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--colorWhite);
+}
+.prosses_tap {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--gap);
+}
+.prosses_tap button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--colorNavy);
+  background-color: var(--colorWhite);
+}
+.prosses_tap button:first-of-type {
+  border-width: 1px 0 1px 1px;
+}
+.prosses_tap button:nth-of-type(2) {
+  border-width: 1px 0 1px 1px;
+}
+.prosses_tap button:last-of-type {
+  border-width: 1px 1px 1px 0;
+}
+.prosses_tap button:hover {
+  font-weight: bold;
+}
+.prosses_tap button.on {
+  background-color: var(--colorNavy);
+  color: var(--colorWhite);
+  font-weight: bold;
+}
+.prosses_choice {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  padding: var(--gap);
+}
+.individual_txt {
+  margin-right: var(--gap2);
+}
+/* processes_con 시작 */
+.processes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*processes_1 시작 (날짜및 회차선택) */
+.selection_tit {
+  width: 100%;
+  background-color: var(--colorNavy);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+}
+.processes_1_choice {
+  padding: 0 0.5rem;
+  color: transparent;
+}
+.processes_1_choice.on {
+  color: var(--colorNavy);
+}
+.processes > div {
+  width: 50%;
+  border: 1px solid dodgerblue;
+}
+
+.selection_content_tit {
+  display: flex;
+  background-color: var(--colorLYellow);
+  font-weight: 500;
+}
+.selection_content_tit p {
+  padding: 0.5rem 1rem;
+  border: 1px solid red;
+  width: calc(100% / 5);
+  text-align: center;
+}
+.step {
+  display: flex;
+  justify-content: space-between;
+}
+.step > * {
+  padding: 0.5rem 1rem;
+  /* border: 1px solid red; */
+  width: calc(100% / 5);
+  text-align: center;
+}
+.step > button {
+  background-color: transparent;
+}
+.step > button span {
+  padding: 0.5rem 1rem;
+  background-color: var(--colorNavy);
+  color: #fff;
+  font-weight: bold;
+}
+.step > button span.full {
+  background-color: var(--colorRed);
+}
+.step input {
+  width: 20px;
+  height: 20px;
+}
