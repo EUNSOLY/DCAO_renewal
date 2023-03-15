@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/my_reset.css" />
-
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/my_reset.css" />
     <link rel="stylesheet" href="./css/prosses.css" />
@@ -15,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
+    <!-- 달력 -->
+    <link rel="stylesheet" href="./css/calender.css" />
+    <script src="./js/calender.js" defer></script>
+    <script src="./prosses.js" defer></script>
     <title>예약</title>
   </head>
   <body>
@@ -122,72 +125,186 @@
     <main class="mx">
       <form action="">
         <nav class="prosses_choice">
-          <input type="radio" name="Choice" id="individual" />
+          <input type="radio" name="Choice" id="individual" checked />
           <label for="individual" class="individual_txt">개인</label>
           <input type="radio" name="Choice" id="group" />
           <label for="group" class="group_txt">단체</label>
         </nav>
-        <ul class="processes_con">
-          <li class="processes processes_1">
+        <div class="individual on">
+          <ul class="processes_con">
             <h2 class="selection_tit">
-              날짜 및 회차선택<span class="processes_1_choice">2020200</span>
+              1. 날짜 및 회차선택<span class="processes_1_choice">2020200</span>
             </h2>
-            <div class="calendar">d</div>
-            <div class="calendar_selection">
-              <ul class="selection_con">
-                <li class="selection_content_tit">
-                  <p>회차</p>
-                  <p>시간</p>
-                  <p>잔여/정원</p>
-                  <p>예약상태</p>
-                  <p>선택</p>
-                </li>
-                <li class="step step_1">
-                  <p>1회차</p>
-                  <p>15:00</p>
-                  <p>00/00</p>
-                  <button><span>예약가능</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-                <li class="step step_2">
-                  <p>2회차</p>
-                  <p>16:00</p>
-                  <p>00/00</p>
-                  <button><span>예약가능</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-                <li class="step step_3">
-                  <p>3회차</p>
-                  <p>17:00</p>
-                  <p>00/00</p>
-                  <button><span>예약가능</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-                <li class="step step_4">
-                  <p>4회차</p>
-                  <p>19:00</p>
-                  <p>00/00</p>
-                  <button><span>예약가능</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-                <li class="step step_5">
-                  <p>5회차</p>
-                  <p>20:00</p>
-                  <p>00/00</p>
-                  <button><span>예약가능</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-                <li class="step step_6">
-                  <p>6회차</p>
-                  <p>21:00</p>
-                  <p>00/00</p>
-                  <button><span class="full">예약완료</span></button>
-                  <p><input type="checkbox" name="step_choice" /></p>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+            <li class="processes processes_1 on">
+              <div class="calendar"></div>
+              <div class="calendar_selection">
+                <ul class="selection_con">
+                  <li class="selection_content_tit">
+                    <p>회차</p>
+                    <p>시간</p>
+                    <p>잔여/정원</p>
+                    <p>예약상태</p>
+                    <p>선택</p>
+                  </li>
+                  <li class="step">
+                    <label>
+                      <span>1회차</span>
+                      <span>15:00</span>
+                      <span>00/20</span>
+                      <!-- <p class="prosses">
+                        <input type="button" value="예약가능" />
+                      </p> -->
+                      <p><span class="prosses">예약가능</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <!-- 복사시작 -->
+                  <li class="step">
+                    <label>
+                      <span>2회차</span>
+                      <span>16:00</span>
+                      <span>00/20</span>
+                      <p><span class="prosses">예약가능</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <li class="step">
+                    <label>
+                      <span>3회차</span>
+                      <span>17:00</span>
+                      <span>00/20</span>
+                      <p><span class="prosses">예약가능</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <li class="step">
+                    <label>
+                      <span>4회차</span>
+                      <span>19:00</span>
+                      <span>00/20</span>
+                      <p><span class="prosses">예약가능</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <li class="step">
+                    <label>
+                      <span>5회차</span>
+                      <span>20:00</span>
+                      <span>00/20</span>
+                      <p><span class="prosses">예약가능</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <li class="step">
+                    <label>
+                      <span>6회차</span>
+                      <span>21:00</span>
+                      <span>20/20</span>
+                      <p><span class="prosses full">예약완료</span></p>
+                      <p>
+                        <input
+                          type="radio"
+                          name="step_choice"
+                          id="step_choice"
+                        />
+                      </p>
+                    </label>
+                  </li>
+                  <!-- 복사끝 -->
+                </ul>
+              </div>
+              <label class="processes_1Btn">
+                <input type="button" value="완료" />
+              </label>
+            </li>
+            <h2 class="selection_tit">
+              2. 인원 선택<span class="processes_1_choice">선택정보</span>
+            </h2>
+            <li class="processes processes_2 on">
+              <div class="processes_2_txt">
+                <h3 class="processes_2_tit">주의사항</h3>
+                <p>1. 방문 예정일 1일 전까지는 변경 및 취소가 가능합니다.</p>
+                <p>
+                  2. 관람 예약은 신청 가능 날짜에서 한 번만 신청하실 수
+                  있습니다.
+                </p>
+                <p>
+                  3. 개인관람 예약은 최소 20명까지 가능하며 20명 이상 시 단체
+                  관람으로 예약해주기길 바랍니다.
+                </p>
+                <p>4. 입장 마감시간은 예약시간 이후 10분 뒤 입니다.</p>
+                <p>
+                  이 외의 내용은 대전시민천문대에 문의전화로 문의하시길
+                  바랍니다.
+                </p>
+              </div>
+              <div class="processes_2_num">
+                <div class="select">
+                  <div class="selected">
+                    <div class="selected_value">인원선택</div>
+                    <div class="selected_icon"></div>
+                  </div>
+                  <ul>
+                    <li class="option">1</li>
+                    <li class="option">2</li>
+                    <li class="option">3</li>
+                    <li class="option">4</li>
+                    <li class="option">5</li>
+                    <li class="option">6</li>
+                    <li class="option">7</li>
+                    <li class="option">8</li>
+                    <li class="option">9</li>
+                    <li class="option">10</li>
+                    <li class="option">11</li>
+                    <li class="option">12</li>
+                    <li class="option">13</li>
+                    <li class="option">14</li>
+                    <li class="option">15</li>
+                    <li class="option">16</li>
+                    <li class="option">17</li>
+                    <li class="option">18</li>
+                    <li class="option">19</li>
+                    <li class="option">20</li>
+                  </ul>
+                </div>
+              </div>
+              <label class="processes_1Btn">
+                <input type="button" value="완료" />
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="group">단체</div>
       </form>
     </main>
   </body>

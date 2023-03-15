@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --calendar-bg-color: #262829;
+  --calendar-font-color: #fff;
+  --weekdays-border-bottom-color: #404040;
+  --calendar-date-hover-color: #505050;
+  --calendar-current-date-color: #1b1f21;
+  --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
+  --calendar-today-innerborder-color: transparent;
+  --calendar-nextprev-bg-color: transparent;
+  --next-prev-arrow-color: #fff;
+  --calendar-border-radius: 16px;
+  --calendar-prevnext-date-color: #484848;
+
+  /* 이은솔 */
+  color: var(--colorNavy);
+  font-family: "Noto Sans KR";
+  font-weight: normal;
+  font-size: 16px;
+  --mx: 1440px;
+  --colorBlack: #232323;
+  --colorWhite: #ffffff;
+  --colorGray: #d9d9d9;
+  --colorNavy: #284372;
+  --colorYellow: #ffd700;
+  --colorLYellow: #ffee92;
+  --colorRed: #ff3939;
+  --gap: 32px;
+  --gap2: 16px;
+}
+
+.calendar {
+  /* position: relative; */
+  /* max-width: 400px;  */
+  /*change as per your design need */
+  /* min-width: 320px; */
+  background: #fff;
+  color: var(--colorNavy);
+  overflow: hidden;
+  width: 45%;
+}
+
+.calendar .calendar-inner .calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.calendar .calendar-inner .calendar-body div {
+  /* border: 1px solid rgba(255, 0, 0, 0.311); */
+  padding: 0.6rem;
+}
+.week_1,
+.week_7 {
+  color: var(--colorRed);
+}
+.calendar .calendar-inner .calendar-body div > a {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar .calendar-inner .calendar-body div:hover {
+}
+
+.calendar .calendar-inner .calendar-body div.empty-dates:hover {
+}
+
+.calendar .calendar-inner .calendar-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--colorLYellow);
+  font-weight: 500;
+}
+.calendar-month-label {
+  padding-left: 0.5rem;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-year-month {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40px;
+}
+
+/* 오늘 */
+.calendar .calendar-inner .calendar-body .calendar-today {
+  position: relative;
+  z-index: 100;
+  color: #fff;
+}
+.calendar .calendar-inner .calendar-body .calendar-today::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: var(--colorNavy);
+  z-index: -1;
+}
+.calendar .calendar-inner .calendar-body .calendar-today.on {
+  color: var(--colorNavy);
+}
+.calendar .calendar-inner .calendar-body .calendar-today.on::before {
+  display: none;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a,
+.calendar .calendar-inner .calendar-controls .calendar-prev a {
+  color: var(--colorNavy);
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+  left: 35%;
+}
+.calendar .calendar-inner .calendar-controls .calendar-next a svg {
+  right: 35%;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg path,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg path {
+  fill: var(--colorNavy);
+}
+
+.calendar .calendar-inner .calendar-body .prev-dates,
+.calendar .calendar-inner .calendar-body .next-dates {
+  color: #99999950;
+  cursor: default;
+}
+
+.calendar .calendar-inner .calendar-body .number-item.on {
+  background-color: var(--colorLYellow);
+  border-radius: 4px;
+}

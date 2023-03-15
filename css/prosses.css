@@ -13,6 +13,7 @@
   font-weight: normal;
   font-size: 16px;
   --mx: 1440px;
+  --mx2: 1000px;
   --colorBlack: #232323;
   --colorWhite: #ffffff;
   --colorGray: #d9d9d9;
@@ -75,7 +76,7 @@ img {
   font-weight: bold;
 }
 .prosses_choice {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   padding: var(--gap);
@@ -84,23 +85,43 @@ img {
   margin-right: var(--gap2);
 }
 /* processes_con 시작 */
+/* 공통 */
 .processes {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  max-height: 0;
+  border: 1px solid dodgerblue;
 }
-
+.processes.on {
+  max-height: 500px;
+}
 /*processes_1 시작 (날짜및 회차선택) */
+.individual,
+.group {
+  display: none;
+}
+.individual.on,
+.group.on {
+  display: block;
+}
+.processes_con {
+  border: 1px solid var(--colorNavy);
+}
 .selection_tit {
   width: 100%;
   background-color: var(--colorNavy);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.25rem;
+  border: 1px solid red;
+  padding-left: 2rem;
 }
+
 .processes_1_choice {
   padding: 0 0.5rem;
   color: transparent;
@@ -108,45 +129,170 @@ img {
 .processes_1_choice.on {
   color: var(--colorNavy);
 }
-.processes > div {
-  width: 50%;
-  border: 1px solid dodgerblue;
+
+.calendar_selection {
+  width: 55%;
 }
 
 .selection_content_tit {
   display: flex;
   background-color: var(--colorLYellow);
   font-weight: 500;
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 .selection_content_tit p {
   padding: 0.5rem 1rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: calc(100% / 5);
   text-align: center;
 }
 .step {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #28437220;
 }
-.step > * {
+.step:first-child {
+  margin-top: 1rem;
+}
+.step > label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.step > label > * {
   padding: 0.5rem 1rem;
   /* border: 1px solid red; */
   width: calc(100% / 5);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
 }
-.step > button {
-  background-color: transparent;
+/* .prosses > input {
+  border: none;
+  outline: none;
+  border: 1px solid red;
+  padding: 1rem 4rem;
+} */
+.step p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.step > button span {
-  padding: 0.5rem 1rem;
+.step .prosses {
+  padding: 0.25rem 0.5rem;
   background-color: var(--colorNavy);
   color: #fff;
-  font-weight: bold;
 }
-.step > button span.full {
+.step .prosses.full {
   background-color: var(--colorRed);
 }
 .step input {
   width: 20px;
   height: 20px;
+}
+.processes_1Btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+
+.processes_1Btn input {
+  border: none;
+  outline: none;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+.processes_1Btn input:hover {
+  background-color: var(--colorNavy);
+  color: #fff;
+}
+.processes_1Btn input:focus {
+  background-color: var(--colorNavy);
+  color: #fff;
+}
+.processes_2 {
+  padding: 0 2rem;
+}
+.processes_2 > * {
+  border: 1px solid red;
+}
+.processes_2_txt {
+  width: 80%;
+}
+.processes_2_num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.processes_2_tit {
+  font-size: 1.25rem;
+  color: var(--colorRed);
+  padding: 1rem 0;
+  font-weight: 600;
+}
+
+.processes_2_txt > p {
+  padding: 0.75rem 0;
+}
+.processes_2_txt > p:last-of-type {
+  font-size: 0.75rem;
+  color: var(--colorRed);
+  font-weight: 600;
+}
+
+/* 인원선택 */
+.select {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.selected {
+  border: 1px solid var(--colorNavy);
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  /* position: relative; */
+}
+.selected_value {
+  color: #28437250;
+}
+.selected_icon {
+  min-width: 15px;
+  background-color: red;
+  background: url(../img/prosses_selected_icon.svg) no-repeat center/ 100%;
+}
+.select ul {
+  min-width: 130px;
+  border: 1px solid var(--colorNavy);
+  text-align: center;
+  cursor: pointer;
+  /* width: 100%; */
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 100%; */
+  display: none;
+}
+
+.select .option {
+  padding: 0.25rem 0;
+}
+.select .option:hover {
+  background-color: var(--colorNavy);
+  color: #fff;
+}
+
+.select.active ul {
+  display: block;
 }
