@@ -91,10 +91,15 @@ img {
   flex-wrap: wrap;
   overflow: hidden;
   max-height: 0;
-  border: 1px solid dodgerblue;
+  border-bottom:1px  solid #fff;
+  /* border: 1px solid dodgerblue; */
+  transition: 0.3s;
+  
 }
 .processes.on {
   max-height: 500px;
+  
+  
 }
 /*processes_1 시작 (날짜및 회차선택) */
 .individual,
@@ -118,7 +123,7 @@ img {
   align-items: center;
   justify-content: space-between;
   font-size: 1.25rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding-left: 2rem;
 }
 
@@ -219,9 +224,7 @@ img {
 .processes_2 {
   padding: 0 2rem;
 }
-.processes_2 > * {
-  border: 1px solid red;
-}
+
 .processes_2_txt {
   width: 80%;
 }
@@ -263,26 +266,24 @@ img {
   justify-content: space-between;
   padding: 0 0.5rem;
   cursor: pointer;
-  /* position: relative; */
+  position: relative;
 }
 .selected_value {
   color: #28437250;
 }
 .selected_icon {
-  min-width: 15px;
-  background-color: red;
+  min-width: 10px;
   background: url(../img/prosses_selected_icon.svg) no-repeat center/ 100%;
 }
 .select ul {
-  min-width: 130px;
   border: 1px solid var(--colorNavy);
   text-align: center;
   cursor: pointer;
   overflow-y: scroll;
-  /* width: 100%; */
-  /* position: absolute; */
-  /* left: 0; */
-  /* bottom: 100%; */
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
   display: none;
 }
 
@@ -297,4 +298,61 @@ img {
 .select.active ul {
   display: block;
   height: 110px;
+  display: flex;
+}
+.processes_3 {
+  display: flex;
+  justify-content: center;
+}
+
+.processes_3_txt{
+  border: 2px solid red;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+
+}
+.reservation_con{
+  border: 5px solid dodgerblue;
+  min-width: 600px;
+  padding: 1rem 0.5rem;
+  
+}
+.reservation_con li{
+  width: 100%;
+  /* border: 1px solid dodgerblue; */
+  display: flex;
+  justify-content: center;
+}
+.inputE{
+  padding: 0.5rem 1.5rem;
+ border: 1px solid #ddd;
+ border-width: 1px 0 0px 1px;
+ width: 25%;
+ text-align: center;
+  /* background-color: #ddd; */
+}
+.input_con{
+  width: 60%;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  border-width: 1px 1px 0 1px;
+
+}
+.input_con input{
+  border: none;
+  outline: none;
+  width: 80%;
+  border: 1px solid #ddd; 
+}
+/*  */
+.number .input_con input{
+  width: 20%;
+  margin-right: 1rem;
+  
+
 }

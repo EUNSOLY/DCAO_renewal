@@ -17,7 +17,7 @@
     <!-- 달력 -->
     <link rel="stylesheet" href="./css/calender.css" />
     <script src="./js/calender.js" defer></script>
-    <script src="./prosses.js" defer></script>
+    <script src="./js/prosses.js" defer></script>
     <title>예약</title>
   </head>
   <body>
@@ -135,7 +135,7 @@
             <h2 class="selection_tit">
               1. 날짜 및 회차선택<span class="processes_1_choice">2020200</span>
             </h2>
-            <li class="processes processes_1 on">
+            <li class="processes processes_1 ">
               <div class="calendar"></div>
               <div class="calendar_selection">
                 <ul class="selection_con">
@@ -250,7 +250,7 @@
             <h2 class="selection_tit">
               2. 인원 선택<span class="processes_1_choice">선택정보</span>
             </h2>
-            <li class="processes processes_2 on">
+            <li class="processes processes_2">
               <div class="processes_2_txt">
                 <h3 class="processes_2_tit">주의사항</h3>
                 <p>1. 방문 예정일 1일 전까지는 변경 및 취소가 가능합니다.</p>
@@ -273,8 +273,7 @@
                   <div class="selected">
                     <div class="selected_value">인원선택</div>
                     <div class="selected_icon"></div>
-                  </div>
-                  <ul>
+                    <ul>
                     <li class="option">1</li>
                     <li class="option">2</li>
                     <li class="option">3</li>
@@ -296,8 +295,43 @@
                     <li class="option">19</li>
                     <li class="option">20</li>
                   </ul>
+                  </div>
+                  
                 </div>
               </div>
+              <label class="processes_1Btn">
+                <input type="button" value="완료" />
+              </label>
+            </li>
+            <h2 class="selection_tit">
+              3. 개인정보 입력<span class="processes_1_choice">선택정보</span>
+            </h2>
+            <li class="processes processes_3 on">
+              <p class="processes_3_txt">
+                예약자 정보
+              </p>
+              <ul class="reservation_con">
+                <li class="name">
+                  <label for="name" class="inputE">예약자명</label>
+                  <div class="input_con"><input type="text" min="0" maxlength="10" id="name"></div>
+                </li>
+                <li class="number">
+                  <label for="tel" class="inputE">핸드폰번호</label>
+                  <div class="input_con">
+                    <input type="tel" min="0" id="tel" placeholder="010">
+                    <input type="tel" min="0" id="tel">
+                    <input type="tel" min="0" id="tel">
+                  </div>
+                </li>
+                <li class="email">
+                  <label for="email" class="inputE">이메일</label>
+                  <div class="input_con">
+                    <input type="tel" id="email" >
+                    @
+                    <input type="tel" id="email">
+                  </div>
+                </li>
+              </ul>
               <label class="processes_1Btn">
                 <input type="button" value="완료" />
               </label>
