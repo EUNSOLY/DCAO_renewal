@@ -278,6 +278,7 @@ img {
   border: 1px solid var(--colorNavy);
   text-align: center;
   cursor: pointer;
+  overflow-y: scroll;
   /* width: 100%; */
   /* position: absolute; */
   /* left: 0; */
@@ -295,4 +296,5 @@ img {
 
 .select.active ul {
   display: block;
+  height: 110px;
 }
