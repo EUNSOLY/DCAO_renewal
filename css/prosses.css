@@ -35,7 +35,11 @@ img {
 }
 
 .main_v {
+  margin-top: var(--gap2);
+  padding-top: 25%;
   position: relative;
+  background: var(--colorNavy) url(../img/processes_visualimg.png) no-repeat
+    center/ cover;
 }
 .mian_v_tit {
   position: absolute;
@@ -43,7 +47,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "S-CoreDream-3Light";
-  font-size: 3.5rem;
+  font-size: 3vw;
   font-weight: 800;
   color: var(--colorWhite);
 }
@@ -51,6 +55,7 @@ img {
   display: flex;
   justify-content: center;
   padding-top: var(--gap);
+  flex-wrap: wrap;
 }
 .prosses_tap button {
   cursor: pointer;
@@ -75,6 +80,20 @@ img {
   color: var(--colorWhite);
   font-weight: bold;
 }
+
+.tap_con {
+  display: none;
+}
+.tap_con.on {
+  display: block;
+}
+.tap_con > h2 {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff3939;
+}
 .prosses_choice {
   /* border: 1px solid red; */
   display: flex;
@@ -90,17 +109,16 @@ img {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  max-height: 0;
-  border-bottom:1px  solid #fff;
+  justify-content: center;
+  max-height: 40px;
+  border-bottom: 1px solid #fff;
   /* border: 1px solid dodgerblue; */
   transition: 0.3s;
-  
 }
 .processes.on {
-  max-height: 500px;
-  
-  
+  max-height: 800px;
 }
+
 /*processes_1 시작 (날짜및 회차선택) */
 .individual,
 .group {
@@ -134,7 +152,11 @@ img {
 .processes_1_choice.on {
   color: var(--colorNavy);
 }
-
+.processes_1_con {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .calendar_selection {
   width: 55%;
 }
@@ -176,12 +198,7 @@ img {
   align-items: center;
   /* text-align: center; */
 }
-/* .prosses > input {
-  border: none;
-  outline: none;
-  border: 1px solid red;
-  padding: 1rem 4rem;
-} */
+
 .step p {
   display: flex;
   justify-content: center;
@@ -204,6 +221,7 @@ img {
   display: flex;
   justify-content: center;
   margin: 2rem 0 1rem;
+  /* border: 1px solid red; */
 }
 
 .processes_1Btn input {
@@ -221,18 +239,18 @@ img {
   background-color: var(--colorNavy);
   color: #fff;
 }
-.processes_2 {
-  padding: 0 2rem;
-}
 
 .processes_2_txt {
   width: 80%;
+  padding: 0 2rem;
 }
 .processes_2_num {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 20%;
+  align-self: flex-start;
+  margin-top: 4rem;
 }
 
 .processes_2_tit {
@@ -285,9 +303,11 @@ img {
   left: 0;
   top: 100%;
   display: none;
+  background-color: #fff;
 }
 
 .select .option {
+  width: 100%;
   padding: 0.25rem 0;
 }
 .select .option:hover {
@@ -296,63 +316,369 @@ img {
 }
 
 .select.active ul {
-  display: block;
+  display: flex;
   height: 110px;
-  display: flex;
+  flex-wrap: wrap;
 }
-.processes_3 {
-  display: flex;
-  justify-content: center;
-}
-
-.processes_3_txt{
-  border: 2px solid red;
+/* 예약자정보 */
+.processes_3_txt {
   width: 100%;
   text-align: center;
   padding: 1rem 0;
   font-size: 1.25rem;
   font-weight: 600;
-
 }
-.reservation_con{
-  border: 5px solid dodgerblue;
+.reservation_con {
   min-width: 600px;
-  padding: 1rem 0.5rem;
-  
+  padding: 3rem 0.5rem 1rem;
 }
-.reservation_con li{
+.reservation_con li {
   width: 100%;
-  /* border: 1px solid dodgerblue; */
   display: flex;
   justify-content: center;
 }
-.inputE{
+.inputE {
   padding: 0.5rem 1.5rem;
- border: 1px solid #ddd;
- border-width: 1px 0 0px 1px;
- width: 25%;
- text-align: center;
+  border: 1px solid #ddd;
+  border-width: 1px 0 0px 1px;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background-color: #ddd; */
 }
-.input_con{
+.input_con {
   width: 60%;
   border: 1px solid #ddd;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   display: flex;
   justify-content: center;
   border-width: 1px 1px 0 1px;
-
 }
-.input_con input{
+.input_con input {
   border: none;
   outline: none;
   width: 80%;
-  border: 1px solid #ddd; 
+  border: 1px solid #ddd;
+  padding: 0.5rem 1.5rem;
 }
-/*  */
-.number .input_con input{
-  width: 20%;
-  margin-right: 1rem;
-  
+.input_con input:focus {
+  background-color: #28437220;
+}
 
+.confirmationPassword .inputE {
+  border-width: 1px 0 1px 1px;
+}
+.confirmationPassword .input_con {
+  border-width: 1px 1px 1px 1px;
+}
+
+/* 예약완료모달 */
+.reservationModal.on {
+  display: flex;
+}
+.reservationModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000050;
+  z-index: 2000;
+  display: none;
+}
+.modal_con {
+  width: 500px;
+  height: 250px;
+  background: var(--colorLYellow) url(../img/modal_img.svg) no-repeat center /
+    90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_txt {
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+.modal_txt > h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+.modal_txt > p {
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+}
+.modal_con input {
+  border: none;
+  outline: none;
+  padding: 0.25rem 1rem;
+  background-color: var(--colorNavy);
+  margin-top: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+}
+.processes_4.completion {
+  display: block;
+}
+.processes_4 {
+  padding: 2rem 2rem;
+  border-bottom: none;
+  border: 1px solid var(--colorNavy);
+  max-height: 800px;
+  display: none;
+}
+.processes_4_tit {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+.processes_list {
+  width: 50%;
+  border: 1px solid #d9d9d9;
+  border-width: 1px 0 0 1px;
+  display: flex;
+  text-align: center;
+  color: var(--colorBlack);
+  font-size: 1.05rem;
+}
+.processes_list:nth-child(odd) {
+  border-width: 1px 1px 0 1px;
+}
+.processes_listDividing {
+  width: 30%;
+  background-color: #d9d9d980;
+  padding: 1rem 0;
+}
+.processes_list_content {
+  width: 70%;
+  padding: 1rem 0;
+}
+.processes_list:nth-child(6) {
+  border-width: 1px 0 1px 1px;
+}
+.processes_list:last-of-type {
+  border-width: 1px 1px 1px 1px;
+}
+.btn_wrap {
+  width: 100%;
+  padding: 3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.btn_wrap a {
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-right: 1rem;
+  background-color: var(--colorNavy);
+  color: #ffff;
+  cursor: pointer;
+}
+/* .processes_1,
+.processes_2,
+.processes_3 {
+  display: none;
+} */
+
+.ft_wrap {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  /* processes_1 반응형시작*/
+  .calendar {
+    background: #fff;
+    color: var(--colorNavy);
+    overflow: hidden;
+    width: 35%;
+  }
+  .calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+    left: 28%;
+  }
+  .calendar .calendar-inner .calendar-controls .calendar-next a svg {
+    right: 28%;
+  }
+  .calendar_selection {
+    width: 65%;
+  }
+  .selection_content_tit p {
+    padding: 0.5rem 0.5rem;
+    /* border: 1px solid red; */
+    width: calc(100% / 5);
+    text-align: center;
+  }
+  .step .prosses {
+    font-size: 0.75rem;
+  }
+  /* processes_1 반응형끝*/
+  .processes_2_txt {
+    width: 65%;
+  }
+  .processes_2_num {
+    width: 35%;
+  }
+}
+
+@media (max-width: 860px) {
+  /* processes_1 반응형시작*/
+  .calendar {
+    width: 100%;
+  }
+  .calendar_selection {
+    width: 100%;
+  }
+  /* processes_1 반응형끝*/
+}
+@media (max-width: 720px) {
+}
+@media (max-width: 580px) {
+  .main_v {
+    padding-top: 0;
+    min-height: 120px;
+  }
+  .mian_v_tit {
+    font-size: 1.25rem;
+  }
+  .prosses_tap button {
+    margin: 0.15rem;
+  }
+  /* 에약 탭키 반응형 시작 */
+  .prosses_tap button:first-of-type {
+    border-width: 1px 1px 1px 1px;
+  }
+  .prosses_tap button:nth-of-type(2) {
+    border-width: 1px 1px 1px 1px;
+  }
+  .prosses_tap button:last-of-type {
+    border-width: 1px 1px 1px 1px;
+  }
+  /* processes_1 반응형시작*/
+  .processes_1 {
+    font-size: 1rem;
+  }
+  .selection_tit {
+    font-size: 1rem;
+  }
+  .selection_content_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .selection_content_tit p {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .step > label > * {
+    padding: 0.5rem 0;
+  }
+
+  .step .prosses {
+    font-size: 0.5rem;
+    font-weight: normal;
+    padding: 0.25rem;
+  }
+
+  /* processes_1 반응형끝*/
+  /* 인원선택 반응형 시작 */
+  .processes_2_txt {
+    width: 100%;
+  }
+  .processes_2_num {
+    width: 100%;
+    align-self: auto;
+    margin-top: 1rem;
+  }
+  .select ul {
+    top: auto;
+    bottom: 100%;
+  }
+  .processes_2 .processes_1Btn {
+    width: 100%;
+  }
+
+  .reservation_con {
+    max-width: 600px;
+    padding: 0rem 0.5rem 1rem;
+  }
+  .reservation_con li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*  */
+
+    flex-wrap: wrap;
+  }
+  .inputE {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    width: 100%;
+  }
+  .input_con {
+    width: 60%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 3px solid #d9d9d980;
+    margin-bottom: 1rem;
+  }
+  .input_con input {
+    border: none;
+    outline: none;
+    width: 80%;
+    padding: 0.5rem 1.5rem;
+  }
+  .input_con input:focus {
+    background-color: #28437220;
+  }
+
+  .confirmationPassword .inputE {
+    border-width: 1px 0 1px 1px;
+  }
+  .confirmationPassword .input_con {
+    border-width: 1px 1px 1px 1px;
+  }
+  .processes_list {
+    width: 100%;
+    border: 1px solid #d9d9d980;
+    border-width: 1px 1px 0 1px;
+    font-size: 0.85rem;
+    /* border: 1px solid #d9d9d980; */
+  }
+
+  .processes_listDividing {
+    width: 30%;
+    background-color: #d9d9d980;
+    padding: 1rem 0;
+  }
+  .processes_list_content {
+    width: 70%;
+    padding: 1rem 0;
+  }
+  .processes_list:nth-child(6) {
+    border-width: 1px;
+  }
+  .processes_list:last-of-type {
+    border-width: 0 1px 1px 1px;
+  }
+  .btn_wrap {
+    width: 100%;
+    padding: 0;
+  }
+  .btn_wrap a {
+    margin-top: 1rem;
+    min-width: 150px;
+  }
 }

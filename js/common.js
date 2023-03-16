@@ -107,9 +107,9 @@ function displayActive(item) {
       text = "맑음";
       iconImg = "clear";
     } else if (
-      weaterReady == "Partly Cloudy" ||
-      weaterReady == "Cloudy" ||
-      weaterReady == "Very Cloudy" ||
+      weaterReady == "Partly cloudy" ||
+      weaterReady == "cloudy" ||
+      weaterReady == "Very cloudy" ||
       weaterReady == "pcloudy"
     ) {
       // console.log("흐림");
@@ -127,15 +127,15 @@ function displayActive(item) {
       // console.log("소나기");
       text = "소나기";
       iconImg = "Rain";
-    } else if (weaterReady == "Rain") {
+    } else if (weaterReady == "rain") {
       // console.log("비");
       text = "비";
       iconImg = "Rain";
-    } else if (weaterReady == "Snow") {
+    } else if (weaterReady == "snow") {
       text = "눈";
       iconImg = "Snow";
       // console.log("눈");
-    } else if (weaterReady == "Mixed") {
+    } else if (weaterReady == "mixed") {
       // console.log(비 & 눈);
       text = "비 & 눈";
       iconImg = "Mixed";

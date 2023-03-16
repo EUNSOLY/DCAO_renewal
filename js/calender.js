@@ -235,7 +235,6 @@ function CalendarControl() {
 }
 
 const calendarControl = new CalendarControl();
-
 const $chooseItem = document.querySelectorAll(".number-item");
 
 $chooseItem.forEach((item) => {

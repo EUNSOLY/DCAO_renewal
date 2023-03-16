@@ -1,29 +1,16 @@
-//체크박스 1개만 선택되게 하기
+const tapBtn = document.querySelectorAll(".prosses_tap > button");
+const tapCon = document.querySelectorAll(".tap_con");
 
-// const btn1 = document.querySelector("#btn1");
-// btn1.addEventListener("click");
-// function check(item) {
-//   const checkBox = document.getElementsByName("step_choice");
-//   checkBox.forEach((item) => {
-//     item.checked = false;
-//   });
-//   item.checked = true;
-// onclick="check(this)"
-// }
-
-const $processes_2_num = document.querySelector(".processes_2_num");
-
-const selectBox = document.querySelectorAll(".select");
-
-function toggleSelectbox(selectBox) {
-  selectBox.classList.toggle("active")
-  
-}
-
-selectBox.forEach((selecBox) => {
-  selecBox.addEventListener("click", function (e) {
-    toggleSelectbox(selecBox);
-    
+// 예약탭메뉴구현
+tapBtn.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    tapBtn.forEach((item) => {
+      item.classList.remove("on");
+    });
+    tapCon.forEach((tapCon) => {
+      tapCon.classList.remove("on");
+    });
+    tapCon[i].classList.add("on");
+    item.classList.add("on");
   });
 });
-

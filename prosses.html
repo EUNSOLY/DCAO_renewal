@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/my_reset.css" />
-    <link rel="stylesheet" href="./css/header.css" />
+
     <link rel="stylesheet" href="./css/my_reset.css" />
+    <!-- 달력 -->
+    <link rel="stylesheet" href="./css/calender.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/prosses.css" />
     <!-- 구글폰트 -->
     <!-- Noto Sans Korean -->
@@ -14,8 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
-    <!-- 달력 -->
-    <link rel="stylesheet" href="./css/calender.css" />
+    <script src="./js/header.js" defer></script>
     <script src="./js/calender.js" defer></script>
     <script src="./js/prosses.js" defer></script>
     <title>예약</title>
@@ -112,18 +115,20 @@
         </div>
       </div>
     </header>
+
     <section class="main_v">
-      <img src="./img/processes_visualimg.png" alt="메인이미지" />
+      <!-- <img src="./img/processes_visualimg.png" alt="메인이미지" /> -->
       <p class="mian_v_tit">예약</p>
-      <nav class="prosses_tap mx">
-        <button class="on">관람예약</button>
-        <button>전시해설예약</button>
-        <button>특별프로그램예약</button>
-        <button>봉사활동예약</button>
-      </nav>
     </section>
-    <main class="mx">
-      <form action="">
+    <nav class="prosses_tap mx">
+      <button class="on">관람예약</button>
+      <button>전시해설예약</button>
+      <button>특별프로그램예약</button>
+      <button>봉사활동예약</button>
+    </nav>
+
+    <main class="mx tap_con on">
+      <form action="" class="Watch">
         <nav class="prosses_choice">
           <input type="radio" name="Choice" id="individual" checked />
           <label for="individual" class="individual_txt">개인</label>
@@ -132,17 +137,20 @@
         </nav>
         <div class="individual on">
           <ul class="processes_con">
-            <h2 class="selection_tit">
-              1. 날짜 및 회차선택<span class="processes_1_choice">2020200</span>
-            </h2>
-            <li class="processes processes_1 ">
+            <li class="processes processes_1 on">
+              <h2 class="selection_tit">
+                1. 날짜 및 회차선택<span class="processes_1_choice"
+                  >2020200</span
+                >
+              </h2>
+
               <div class="calendar"></div>
               <div class="calendar_selection">
                 <ul class="selection_con">
                   <li class="selection_content_tit">
                     <p>회차</p>
                     <p>시간</p>
-                    <p>잔여/정원</p>
+                    <p>잔여 / 정원</p>
                     <p>예약상태</p>
                     <p>선택</p>
                   </li>
@@ -151,16 +159,9 @@
                       <span>1회차</span>
                       <span>15:00</span>
                       <span>00/20</span>
-                      <!-- <p class="prosses">
-                        <input type="button" value="예약가능" />
-                      </p> -->
                       <p><span class="prosses">예약가능</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
@@ -172,11 +173,7 @@
                       <span>00/20</span>
                       <p><span class="prosses">예약가능</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
@@ -187,11 +184,7 @@
                       <span>00/20</span>
                       <p><span class="prosses">예약가능</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
@@ -202,11 +195,7 @@
                       <span>00/20</span>
                       <p><span class="prosses">예약가능</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
@@ -217,11 +206,7 @@
                       <span>00/20</span>
                       <p><span class="prosses">예약가능</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
@@ -232,25 +217,23 @@
                       <span>20/20</span>
                       <p><span class="prosses full">예약완료</span></p>
                       <p>
-                        <input
-                          type="radio"
-                          name="step_choice"
-                          id="step_choice"
-                        />
+                        <input type="radio" name="step_choice" />
                       </p>
                     </label>
                   </li>
                   <!-- 복사끝 -->
                 </ul>
               </div>
-              <label class="processes_1Btn">
+              <p class="processes_1Btn">
                 <input type="button" value="완료" />
-              </label>
+              </p>
             </li>
-            <h2 class="selection_tit">
-              2. 인원 선택<span class="processes_1_choice">선택정보</span>
-            </h2>
+
             <li class="processes processes_2">
+              <h2 class="selection_tit">
+                2. 인원 선택<span class="processes_1_choice">선택정보</span>
+              </h2>
+
               <div class="processes_2_txt">
                 <h3 class="processes_2_tit">주의사항</h3>
                 <p>1. 방문 예정일 1일 전까지는 변경 및 취소가 가능합니다.</p>
@@ -274,72 +257,200 @@
                     <div class="selected_value">인원선택</div>
                     <div class="selected_icon"></div>
                     <ul>
-                    <li class="option">1</li>
-                    <li class="option">2</li>
-                    <li class="option">3</li>
-                    <li class="option">4</li>
-                    <li class="option">5</li>
-                    <li class="option">6</li>
-                    <li class="option">7</li>
-                    <li class="option">8</li>
-                    <li class="option">9</li>
-                    <li class="option">10</li>
-                    <li class="option">11</li>
-                    <li class="option">12</li>
-                    <li class="option">13</li>
-                    <li class="option">14</li>
-                    <li class="option">15</li>
-                    <li class="option">16</li>
-                    <li class="option">17</li>
-                    <li class="option">18</li>
-                    <li class="option">19</li>
-                    <li class="option">20</li>
-                  </ul>
+                      <li class="option">1</li>
+                      <li class="option">2</li>
+                      <li class="option">3</li>
+                      <li class="option">4</li>
+                      <li class="option">5</li>
+                      <li class="option">6</li>
+                      <li class="option">7</li>
+                      <li class="option">8</li>
+                      <li class="option">9</li>
+                      <li class="option">10</li>
+                      <li class="option">11</li>
+                      <li class="option">12</li>
+                      <li class="option">13</li>
+                      <li class="option">14</li>
+                      <li class="option">15</li>
+                      <li class="option">16</li>
+                      <li class="option">17</li>
+                      <li class="option">18</li>
+                      <li class="option">19</li>
+                      <li class="option">20</li>
+                    </ul>
                   </div>
-                  
                 </div>
               </div>
-              <label class="processes_1Btn">
+              <p class="processes_1Btn">
                 <input type="button" value="완료" />
-              </label>
-            </li>
-            <h2 class="selection_tit">
-              3. 개인정보 입력<span class="processes_1_choice">선택정보</span>
-            </h2>
-            <li class="processes processes_3 on">
-              <p class="processes_3_txt">
-                예약자 정보
               </p>
+            </li>
+
+            <li class="processes processes_3">
+              <h2 class="selection_tit">
+                3. 개인정보 입력<span class="processes_1_choice">선택정보</span>
+              </h2>
+
+              <p class="processes_3_txt">예약자 정보</p>
               <ul class="reservation_con">
                 <li class="name">
                   <label for="name" class="inputE">예약자명</label>
-                  <div class="input_con"><input type="text" min="0" maxlength="10" id="name"></div>
+                  <p class="input_con">
+                    <input type="text" min="0" maxlength="10" id="name" />
+                  </p>
                 </li>
+
                 <li class="number">
                   <label for="tel" class="inputE">핸드폰번호</label>
-                  <div class="input_con">
-                    <input type="tel" min="0" id="tel" placeholder="010">
-                    <input type="tel" min="0" id="tel">
-                    <input type="tel" min="0" id="tel">
-                  </div>
+                  <p class="input_con">
+                    <input
+                      type="tel"
+                      min="0"
+                      id="tel"
+                      placeholder="-없이 입력해주세요"
+                    />
+                  </p>
                 </li>
                 <li class="email">
                   <label for="email" class="inputE">이메일</label>
-                  <div class="input_con">
-                    <input type="tel" id="email" >
-                    @
-                    <input type="tel" id="email">
-                  </div>
+                  <p class="input_con">
+                    <input type="email" id="email" />
+                  </p>
+                </li>
+                <li class="password">
+                  <label for="password" class="inputE">비밀번호</label>
+                  <p class="input_con">
+                    <input type="password" id="password" />
+                  </p>
+                </li>
+                <li class="confirmationPassword">
+                  <label for="confirmationPassword" class="inputE"
+                    >비밀번호 확인</label
+                  >
+                  <p class="input_con">
+                    <input type="password" id="confirmationPassword" />
+                  </p>
                 </li>
               </ul>
-              <label class="processes_1Btn">
-                <input type="button" value="완료" />
-              </label>
+              <p class="processes_1Btn">
+                <input type="button" value="예약 완료" />
+              </p>
             </li>
           </ul>
         </div>
         <div class="group">단체</div>
       </form>
+      <div class="processes processes_4">
+        <h3 class="processes_4_tit">예약완료</h3>
+        <p class="processes_list">
+          <span class="processes_listDividing">예약구분</span>
+          <span class="processes_list_content">대전시민천문대 개인관람</span>
+        </p>
+        <p class="processes_list">
+          <span class="processes_listDividing">예약일시</span>
+          <span class="processes_list_content"
+            >2023년 03월 08일 (수) 15: 00
+          </span>
+        </p>
+        <p class="processes_list">
+          <span class="processes_listDividing">예약상태</span>
+          <span class="processes_list_content">신청완료</span>
+        </p>
+        <p class="processes_list">
+          <span class="processes_listDividing">예약자명</span>
+          <span class="processes_list_content">이은솔</span>
+        </p>
+        <p class="processes_list">
+          <span class="processes_listDividing">연락처</span>
+          <span class="processes_list_content">010-9999-9999</span>
+        </p>
+        <p class="processes_list">
+          <span class="processes_listDividing">예약인원</span>
+          <span class="processes_list_content">2명</span>
+        </p>
+        <div class="btn_wrap">
+          <a href="#none">확인</a>
+          <a href="#none">마이페이지</a>
+        </div>
+      </div>
+      <div class="reservationModal">
+        <div class="modal_con">
+          <div class="modal_txt">
+            <h3>예약신청이 완료 되었습니다</h3>
+            <p>예약증</p>
+            <p>대전시민천문대<span>개인</span></p>
+            <p>2023년 03월 08일 (수)</p>
+            <p>1회차 15: 00</p>
+            <input type="button" value="확인" />
+          </div>
+        </div>
+      </div>
     </main>
+
+    <main class="mx tap_con">
+      <h2>전시해설예약 콘텐츠</h2>
+    </main>
+
+    <main class="mx tap_con">
+      <h2>특별프로그램예약 콘텐츠</h2>
+    </main>
+
+    <main class="mx tap_con">
+      <h2>봉사활동예약 콘텐츠</h2>
+    </main>
+
+    <footer class="ft_wrap">
+      <div class="ft mx">
+        <div class="ft_con ft_left">
+          <img src="./img/footer_logo.svg" alt="footer_logo" class="ft_logo" />
+
+          <div class="pt_txt">
+            <p>(34128) 대전광역시 유성구 과학로 213-48 (신성동 7-13)</p>
+            <p>TEL. 042-863-8762, 8763</p>
+            <p>FAX. 042-863-8761</p>
+            <p>Copyright © 2017 Daejeon Observatory. All rights reserved</p>
+          </div>
+        </div>
+        <div class="ft_con ft_right">
+          <div class="pt_txt">
+            <p class="pt_tit">천문대 이용안내</p>
+            <p>운영시간14:00 ~ 22:00 (입장마감은 21시 50분 까지 입니다.)</p>
+            <p>휴관일매주 월요일, 공휴일 다음날, 명절 및 신정 연휴</p>
+            <p>이용요금무료</p>
+            <p>전화문의 042-863-8762, 8763 (13:00 ~ 22:00)</p>
+          </div>
+          <div class="ft_short">
+            <p class="pt_tit">바로가기</p>
+            <nav class="pt_Scon">
+              <button class="pt_Slist active">
+                <span>기관사이트 바로가기</span>
+                <div class="pt_Slink">
+                  <a href="#none">바로가기1</a>
+                  <a href="#none">바로가기2</a>
+                  <a href="#none">바로가기3</a>
+                </div>
+              </button>
+              <button class="pt_Slist">
+                <span>지역별천문대 바로가기</span>
+                <div class="pt_Slink">
+                  <a href="#none">바로가기1</a>
+                  <a href="#none">바로가기2</a>
+                  <a href="#none">바로가기3</a>
+                </div>
+              </button>
+              <button class="pt_Slist">
+                <span>카페 바로가기</span>
+                <div class="pt_Slink">
+                  <a href="#none">바로가기1</a>
+                  <a href="#none">바로가기2</a>
+                  <a href="#none">바로가기3</a>
+                  <a href="#none">바로가기4</a>
+                </div>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

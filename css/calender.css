@@ -91,7 +91,7 @@
 /* 오늘 */
 .calendar .calendar-inner .calendar-body .calendar-today {
   position: relative;
-  z-index: 100;
+  z-index: 10;
   color: #fff;
 }
 .calendar .calendar-inner .calendar-body .calendar-today::before {
