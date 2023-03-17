@@ -117,7 +117,6 @@
     </header>
 
     <section class="main_v">
-      <!-- <img src="./img/processes_visualimg.png" alt="메인이미지" /> -->
       <p class="mian_v_tit">예약</p>
     </section>
     <nav class="prosses_tap mx">
@@ -128,7 +127,7 @@
     </nav>
 
     <main class="mx tap_con on">
-      <form action="" class="Watch">
+      <form action="./prossescompletion.html" class="Watch" method="">
         <nav class="prosses_choice">
           <label for="individual" class="individual_txt on">개인</label>
           <label for="group" class="group_txt">단체</label>
@@ -224,9 +223,9 @@
                   <!-- 복사끝 -->
                 </ul>
               </div>
-              <p class="processes_1Btn">
+              <label class="processes_1Btn">
                 <input type="button" value="완료" />
-              </p>
+              </label>
             </li>
 
             <li class="processes processes_2">
@@ -281,9 +280,9 @@
                   </div>
                 </div>
               </div>
-              <p class="processes_1Btn">
+              <label class="processes_1Btn">
                 <input type="button" value="완료" />
-              </p>
+              </label>
             </li>
 
             <li class="processes processes_3">
@@ -309,18 +308,21 @@
                       id="tel"
                       placeholder="-없이 입력해주세요"
                     />
+                    <span class="input_error number_error"></span>
                   </p>
                 </li>
                 <li class="email">
                   <label for="email" class="inputE">이메일</label>
                   <p class="input_con">
                     <input type="email" id="email" />
+                    <span class="input_error email_error"></span>
                   </p>
                 </li>
                 <li class="password">
                   <label for="password" class="inputE">비밀번호</label>
                   <p class="input_con">
                     <input type="password" id="password" />
+                    <span class="input_error password_error"></span>
                   </p>
                 </li>
                 <li class="confirmationPassword">
@@ -329,65 +331,33 @@
                   >
                   <p class="input_con">
                     <input type="password" id="confirmationPassword" />
+                    <span class="input_error confirmationPassword_error"></span>
                   </p>
                 </li>
               </ul>
-              <p class="processes_1Btn">
+              <label class="processes_1Btn">
                 <input type="button" value="예약 완료" />
-              </p>
+              </label>
             </li>
           </ul>
         </div>
 
         <input type="radio" name="Choice" id="group" hidden />
         <div class="group">단체관련 컨텐츠가 들어갑니다용</div>
-      </form>
 
-      <div class="processes processes_4">
-        <h3 class="processes_4_tit">예약완료</h3>
-        <p class="processes_list">
-          <span class="processes_listDividing">예약구분</span>
-          <span class="processes_list_content">대전시민천문대 개인관람</span>
-        </p>
-        <p class="processes_list">
-          <span class="processes_listDividing">예약일시</span>
-          <span class="processes_list_content"
-            >2023년 03월 08일 (수) 15: 00
-          </span>
-        </p>
-        <p class="processes_list">
-          <span class="processes_listDividing">예약상태</span>
-          <span class="processes_list_content">신청완료</span>
-        </p>
-        <p class="processes_list">
-          <span class="processes_listDividing">예약자명</span>
-          <span class="processes_list_content">이은솔</span>
-        </p>
-        <p class="processes_list">
-          <span class="processes_listDividing">연락처</span>
-          <span class="processes_list_content">010-9999-9999</span>
-        </p>
-        <p class="processes_list">
-          <span class="processes_listDividing">예약인원</span>
-          <span class="processes_list_content">2명</span>
-        </p>
-        <div class="btn_wrap">
-          <a href="./index.html">확인</a>
-          <a href="#none">마이페이지</a>
-        </div>
-      </div>
-      <div class="reservationModal">
-        <div class="modal_con">
-          <div class="modal_txt">
-            <h3>예약신청이 완료 되었습니다</h3>
-            <p>예약증</p>
-            <p>대전시민천문대<span>개인</span></p>
-            <p>2023년 03월 08일 (수)</p>
-            <p>1회차 15: 00</p>
-            <input type="button" value="확인" />
+        <div class="reservationModal">
+          <div class="modal_con">
+            <div class="modal_txt">
+              <h3>예약신청이 완료 되었습니다</h3>
+              <p>예약증</p>
+              <p>대전시민천문대<span>개인</span></p>
+              <p>2023년 03월 08일 (수)</p>
+              <p>1회차 15: 00</p>
+              <input type="submit" value="확인" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </main>
 
     <main class="mx tap_con">

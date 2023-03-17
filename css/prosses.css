@@ -36,7 +36,7 @@ img {
 
 .main_v {
   margin-top: var(--gap2);
-  padding-top: 25%;
+  padding-top: 20%;
   position: relative;
   background: var(--colorNavy) url(../img/processes_visualimg.png) no-repeat
     center/ cover;
@@ -375,6 +375,7 @@ img {
   width: 100%;
   display: flex;
   justify-content: center;
+  /* border: 1px solid red; */
 }
 .inputE {
   padding: 0.5rem 1.5rem;
@@ -391,7 +392,9 @@ img {
   border: 1px solid #ddd;
   padding: 0.25rem 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-width: 1px 1px 0 1px;
 }
 .input_con input {
@@ -400,6 +403,18 @@ img {
   width: 80%;
   border: 1px solid #ddd;
   padding: 0.5rem 1.5rem;
+}
+.input_error {
+  /* position: absolute; */
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorRed);
+  font-size: 0.75rem;
+  padding-top: 0.25rem;
+  /* border: 1px solid red; */
 }
 .input_con input:focus {
   background-color: #28437220;
@@ -463,16 +478,18 @@ img {
   color: #fff;
   cursor: pointer;
 }
-.processes_4.completion {
+/* .processes_4.completion {
   display: flex;
   max-height: 800px;
-}
+  margin-top: 2rem;
+} */
 .processes_4 {
   padding: 2rem 2rem;
   border-bottom: none;
-  border: 1px solid var(--colorNavy);
+  border: none;
   max-height: 800px;
-  display: none;
+  display: flex;
+  margin-top: 2rem;
 }
 .processes_4_tit {
   width: 100%;
@@ -677,7 +694,6 @@ img {
     width: 60%;
     padding: 0.5rem 0;
     border: none;
-    border-bottom: 3px solid #d9d9d980;
     margin-bottom: 1rem;
   }
   .input_con input {
@@ -685,6 +701,7 @@ img {
     outline: none;
     width: 80%;
     padding: 0.5rem 1.5rem;
+    border-bottom: 3px solid #d9d9d980;
   }
   .input_con input:focus {
     background-color: #28437220;
