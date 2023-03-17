@@ -15,7 +15,7 @@ const $gnb_list = document.querySelectorAll(".gnb_list");
 $gnb_list.forEach((item, i) => {
   item.addEventListener("click", () => {
     $gnb_list.forEach((item, i) => {
-      item.classList.removegit("on");
+      item.classList.remove("on");
     });
 
     item.classList.add("on");

@@ -118,7 +118,9 @@ img {
 .processes.on {
   max-height: 800px;
 }
-
+.processes.hidden {
+  max-height: 0;
+}
 /*processes_1 시작 (날짜및 회차선택) */
 .individual,
 .group {
@@ -425,7 +427,8 @@ img {
   cursor: pointer;
 }
 .processes_4.completion {
-  display: block;
+  display: flex;
+  max-height: 800px;
 }
 .processes_4 {
   padding: 2rem 2rem;
