@@ -31,7 +31,10 @@ choice.forEach((item) => {
 const processes = document.querySelectorAll(".processes");
 const confirmation = document.querySelector(".processes_4");
 const tit = document.querySelectorAll(".selection_tit");
+
 // tit눌렀을 때도 안에 내용 확인 할 수 있도록
+// 뒤로가기 버튼 생성해야하는뎅...
+
 tit.forEach((item, i) => {
   item.addEventListener("click", () => {
     processes.forEach((item) => {
@@ -41,36 +44,13 @@ tit.forEach((item, i) => {
   });
 });
 
-// 완료 버튼으로 아코디언
-// const Btn = document.querySelectorAll(".processes_1Btn > input");
-// console.log(Btn);
-// Btn.forEach((item, i) => {
-//   item.addEventListener("click", () => {
-//     processes.forEach((item) => {
-//       item.classList.remove("on");
-//     });
-//     processes[i + 1].classList.add("on");
-//     console.log(`순서 ${i + 1}`);
-//   });
-// });
 const Btn = document.querySelectorAll(".processes_1Btn > input");
-//input 창에 정보가 제대로 됬는지 확인 후 넘어갈수있도록
-// input요소
-//number  input // number_error (핸드폰번호)
-//email  input //  email_error (이메일)
-//password input // password_error(비밀번호)
-//confirmationPassword input // confirmationPassword_error  비밀번호확인)
-const tel = document.querySelector("#tel");
-const number_error = document.querySelector(".number_error");
-const email_error = document.querySelector(".email_error");
-const password_error = document.querySelector(".password_error");
-const confirmationPassword_error = document.querySelector(
-  ".confirmationPassword_error"
-);
+
 // 마지막 완료버튼 팝업창오픈
 const modal = document.querySelector(".reservationModal");
 const modalBtn = document.querySelector(".modal_con input");
 
+// 버튼돌아다니며 클레스 붙여주고 마지막 버튼을 만난다면 모달창 오픈
 Btn.forEach((item, i) => {
   item.addEventListener("click", (e) => {
     processes.forEach((item) => {
@@ -84,11 +64,6 @@ Btn.forEach((item, i) => {
       processes[i + 1].classList.add("on");
     }
   });
-});
-
-// 모달창 닫기
-modalBtn.addEventListener("click", () => {
-  modal.classList.remove("on");
 });
 
 // modalBtn.addEventListener("click", () => {
@@ -115,7 +90,39 @@ select.addEventListener("mouseover", () => {
 select.addEventListener("mouseout", () => {
   select.classList.remove("active");
 });
+// 모달창 닫기
+modalBtn.addEventListener("click", () => {
+  modal.classList.remove("on");
+});
 
+// modalBtn.addEventListener("click", () => {
+//   modal.classList.remove("on");
+
+// 예약프로세스완료를 다른 페이지로 연결하여서 아래 내용은 필요없음
+//   if (confirmation.classList.contains("completion") === false) {
+//     processes.forEach((item) => {
+//       item.classList.add("hidden");
+//     });
+//     let processes_con = document.querySelector(".processes_con");
+//     confirmation.classList.add("completion");
+//     processes_con.style.cssText = `border:none;`;
+//   }
+//   return;
+// });
+
+//input 창에 정보가 제대로 됬는지 확인 후 넘어갈수있도록
+// input요소
+//number  input // number_error (핸드폰번호)
+//email  input //  email_error (이메일)
+//password input // password_error(비밀번호)
+//confirmationPassword input // confirmationPassword_error  비밀번호확인)
+const tel = document.querySelector("#tel");
+const number_error = document.querySelector(".number_error");
+const email_error = document.querySelector(".email_error");
+const password_error = document.querySelector(".password_error");
+const confirmationPassword_error = document.querySelector(
+  ".confirmationPassword_error"
+);
 // if (even.target === Btn[2] && ) {
 //   console.log("마지막번튼인데용....... ");
 //   if (!numberpattern.test(tel.value) || tel.value.trim() === " ") {
@@ -124,3 +131,17 @@ select.addEventListener("mouseout", () => {
 //     return false;
 //   }
 // }
+
+// 미사용
+// 완료 버튼으로 아코디언
+// const Btn = document.querySelectorAll(".processes_1Btn > input");
+// console.log(Btn);
+// Btn.forEach((item, i) => {
+//   item.addEventListener("click", () => {
+//     processes.forEach((item) => {
+//       item.classList.remove("on");
+//     });
+//     processes[i + 1].classList.add("on");
+//     console.log(`순서 ${i + 1}`);
+//   });
+// });
