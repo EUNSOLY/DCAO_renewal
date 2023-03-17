@@ -130,13 +130,12 @@
     <main class="mx tap_con on">
       <form action="" class="Watch">
         <nav class="prosses_choice">
-          <input type="radio" name="Choice" id="individual" checked />
-          <label for="individual" class="individual_txt">개인</label>
-          <input type="radio" name="Choice" id="group" />
+          <label for="individual" class="individual_txt on">개인</label>
           <label for="group" class="group_txt">단체</label>
         </nav>
 
-        <div class="individual on">
+        <input type="radio" name="Choice" id="individual" checked hidden />
+        <div class="individual">
           <ul class="processes_con">
             <li class="processes processes_1 on">
               <h2 class="selection_tit">
@@ -339,7 +338,9 @@
             </li>
           </ul>
         </div>
-        <div class="group">단체</div>
+
+        <input type="radio" name="Choice" id="group" hidden />
+        <div class="group">단체관련 컨텐츠가 들어갑니다용</div>
       </form>
 
       <div class="processes processes_4">

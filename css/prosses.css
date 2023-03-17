@@ -95,14 +95,48 @@ img {
   color: #ff3939;
 }
 .prosses_choice {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   padding: var(--gap);
 }
-.individual_txt {
-  margin-right: var(--gap2);
+.individual_txt,
+.group_txt {
+  padding: 0.5rem 2rem;
+  /* font-weight: 500; */
+  font-size: 1.25rem;
+  position: relative;
+  margin-right: 1rem;
+  cursor: pointer;
 }
+.individual_txt::before,
+.group_txt::before {
+  /* content: "●"; */
+  content: "";
+  border: 1px solid transparent;
+  width: 50px;
+  color: transparent;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  text-shadow: 0 0 transparent;
+  font-size: 0.5em;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+.individual_txt.on {
+  font-weight: bold;
+}
+
+.individual_txt.on::before,
+.group_txt.on::before {
+  border-color: var(--colorNavy);
+}
+.individual_txt:hover::before,
+.group_txt:hover::before {
+  font-weight: 500;
+  border-color: var(--colorNavy);
+}
+
 /* processes_con 시작 */
 /* 공통 */
 .processes {
@@ -113,23 +147,26 @@ img {
   max-height: 40px;
   border-bottom: 1px solid #fff;
   /* border: 1px solid dodgerblue; */
-  transition: 0.3s;
+  transition: 0.7s;
 }
 .processes.on {
   max-height: 800px;
 }
 .processes.hidden {
-  max-height: 0;
+  display: none;
 }
 /*processes_1 시작 (날짜및 회차선택) */
 .individual,
 .group {
   display: none;
 }
-.individual.on,
-.group.on {
+#individual:checked + .individual {
   display: block;
 }
+#group:checked + .group {
+  display: block;
+}
+
 .processes_con {
   border: 1px solid var(--colorNavy);
 }
@@ -319,7 +356,7 @@ img {
 
 .select.active ul {
   display: flex;
-  height: 110px;
+  height: 150px;
   flex-wrap: wrap;
 }
 /* 예약자정보 */
@@ -605,6 +642,12 @@ img {
     align-self: auto;
     margin-top: 1rem;
   }
+  .select {
+    width: 50%;
+  }
+  .selected {
+    width: 100%;
+  }
   .select ul {
     top: auto;
     bottom: 100%;
@@ -683,5 +726,52 @@ img {
   .btn_wrap a {
     margin-top: 1rem;
     min-width: 150px;
+  }
+}
+@media (max-width: 430px) {
+  .reservationModal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    z-index: 2000;
+    display: none;
+  }
+  .modal_con {
+    max-width: 500px;
+    width: calc(100% - 2rem);
+    height: 0;
+    padding-top: 50%;
+    background: var(--colorLYellow) url(../img/modal_img.svg) no-repeat center /
+      97%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .modal_txt {
+    position: absolute;
+    padding: 4.5vw 0;
+    top: 0;
+  }
+  .modal_txt > h3 {
+    font-size: 4.5vw;
+    padding: 0.25vw 0;
+  }
+  .modal_txt > p {
+    padding: 1.25vw 0;
+    font-size: 0.85vw;
+  }
+  .modal_con input {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.5rem;
   }
 }

@@ -17,15 +17,20 @@ tapBtn.forEach((item, i) => {
 
 // 개인 단체 선택 구현
 const prosses_choice = document.querySelector(".prosses_choice");
-const choice = prosses_choice.querySelectorAll("input");
+const choice = prosses_choice.querySelectorAll("label");
 
-const individual = document.querySelector(".individual");
-const group = document.querySelector(".group");
+choice.forEach((item) => {
+  item.addEventListener("click", () => {
+    choice.forEach((item) => {
+      item.classList.remove("on");
+    });
+    item.classList.add("on");
+  });
+});
+// 완료 버튼으로 아코디언
 
 const processes = document.querySelectorAll(".processes");
 const confirmation = document.querySelector(".processes_4");
-
-// 완료 버튼으로 아코디언
 
 const Btn = document.querySelectorAll(".processes_1Btn > input");
 Btn.forEach((item, i) => {
@@ -38,6 +43,17 @@ Btn.forEach((item, i) => {
   });
 });
 
+// tit눌렀을 때도 안에 내용 확인 할 수 있도록
+const tit = document.querySelectorAll(".selection_tit");
+console.log(tit);
+tit.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    processes.forEach((item) => {
+      item.classList.remove("on");
+    });
+    processes[i].classList.add("on");
+  });
+});
 // 마지막 완료버튼 팝업창오픈
 const modal = document.querySelector(".reservationModal");
 const modalBtn = document.querySelector(".modal_con input");
@@ -60,4 +76,14 @@ modalBtn.addEventListener("click", () => {
     processes_con.style.cssText = `border:none;`;
   }
   return;
+});
+
+// 셀렉터박스 구현
+const select = document.querySelector(".select");
+
+select.addEventListener("mouseover", () => {
+  select.classList.add("active");
+});
+select.addEventListener("mouseout", () => {
+  select.classList.remove("active");
 });
