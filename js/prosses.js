@@ -95,43 +95,58 @@ modalBtn.addEventListener("click", () => {
   modal.classList.remove("on");
 });
 
-// modalBtn.addEventListener("click", () => {
-//   modal.classList.remove("on");
-
-// 예약프로세스완료를 다른 페이지로 연결하여서 아래 내용은 필요없음
-//   if (confirmation.classList.contains("completion") === false) {
-//     processes.forEach((item) => {
-//       item.classList.add("hidden");
-//     });
-//     let processes_con = document.querySelector(".processes_con");
-//     confirmation.classList.add("completion");
-//     processes_con.style.cssText = `border:none;`;
-//   }
-//   return;
-// });
-
-//input 창에 정보가 제대로 됬는지 확인 후 넘어갈수있도록
-// input요소
-//number  input // number_error (핸드폰번호)
-//email  input //  email_error (이메일)
-//password input // password_error(비밀번호)
-//confirmationPassword input // confirmationPassword_error  비밀번호확인)
 const tel = document.querySelector("#tel");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+const passwordCk = document.querySelector("#confirmationPassword");
 const number_error = document.querySelector(".number_error");
 const email_error = document.querySelector(".email_error");
 const password_error = document.querySelector(".password_error");
 const confirmationPassword_error = document.querySelector(
   ".confirmationPassword_error"
 );
-// if (even.target === Btn[2] && ) {
-//   console.log("마지막번튼인데용....... ");
-//   if (!numberpattern.test(tel.value) || tel.value.trim() === " ") {
-//     number_error.textContent = "번호를 잘못 입력하였습니다.";
-//     error = true;
-//     return false;
-//   }
-// }
 
+const telPatten = /^[0-9]+$/;
+const emailPatten = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const paasPatten = /^[a-zA-Z0-9]+$/;
+tel.addEventListener("change", function (e) {
+  const target = e.target;
+  let targetValue = target.value;
+
+  if (!telPatten.test(targetValue) || targetValue.trim() == " ") {
+    number_error.innerHTML = `핸드폰번호를 제대로 입력해주세요`;
+  } else {
+    number_error.innerHTML = ``;
+  }
+});
+email.addEventListener("change", function (e) {
+  const target = e.target;
+  let targetValue = target.value;
+  if (!emailPatten.test(targetValue) || targetValue.trim() == " ") {
+    email_error.innerHTML = `이메일을 제대로 입력해주세요`;
+  } else {
+    email_error.innerHTML = ``;
+  }
+});
+password.addEventListener("change", function (e) {
+  const target = e.target;
+  let targetValue = target.value;
+  if (!paasPatten.test(targetValue) || targetValue.trim() == "") {
+    password_error.innerHTML = `비밀번호를 제대로 입력해주세요`;
+  } else {
+    password_error.innerHTML = ``;
+  }
+});
+
+passwordCk.addEventListener("change", function (e) {
+  const target = e.target;
+  let targetValue = target.value;
+  if (targetValue.trim() == "" || passwordCk.value !== password.value) {
+    confirmationPassword_error.innerHTML = `비밀번호가 일치하지않습니다.`;
+  } else {
+    confirmationPassword_error.innerHTML = ``;
+  }
+});
 // 미사용
 // 완료 버튼으로 아코디언
 // const Btn = document.querySelectorAll(".processes_1Btn > input");
@@ -144,4 +159,15 @@ const confirmationPassword_error = document.querySelector(
 //     processes[i + 1].classList.add("on");
 //     console.log(`순서 ${i + 1}`);
 //   });
+// });
+// 예약프로세스완료를 다른 페이지로 연결하여서 아래 내용은 필요없음
+//   if (confirmation.classList.contains("completion") === false) {
+//     processes.forEach((item) => {
+//       item.classList.add("hidden");
+//     });
+//     let processes_con = document.querySelector(".processes_con");
+//     confirmation.classList.add("completion");
+//     processes_con.style.cssText = `border:none;`;
+//   }
+//   return;
 // });

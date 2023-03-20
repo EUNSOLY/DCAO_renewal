@@ -38,38 +38,56 @@
 <img src="https://simpleicons.org/icons/css3.svg" alt="" width="25px" color="white"></img> CSS  
 <img src="https://simpleicons.org/icons/javascript.svg" alt="" width="25px" color="white"></img> JS
 
+### 🖐 프로젝트 구현 기능
+
+1. index 팝업존 슬라이드 구현
+2. index 시설안내 탭메뉴
+3. index 날씨 API 사용하여 당일 날짜, 당일최고기온, 당일날씨에 맞는 문구와 아이콘 생성
+4. prossesPage 탭메뉴 생성
+5. calender 기능 (기존 코드 css 및 js 소폭 수정)
+6. 아코디언형태의 슬아이드섹션구성
+7. input 정규식 표현 사용하여 제대로 작성됬는지에 대한 검사 기능작성
+
+---
+
+---
+
 ### 🖐 약식 기획서 요약
 
-# [GooglePPT 약식 기획서](https://docs.google.com/presentation/d/1bEJqM46Jnwgy5yNej3MkmMPzvlmkLFyG6pfiKcyzYjM/edit#slide=id.p)
+# [GooglePPT 약식 기획서](https://docs.google.com/presentation/d/1bEJqM46Jnwgy5yNej3MkmMPzvlmkLFyG6pfiKcyzYjM/edit#)
 
-<img src="" alt="" width="700px"></img>
+<img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/readme_1.PNG?raw=true" alt="약식기획서" width="700px"></img>
 
 ### 🖐 와이어프레임 / 시안
 
-[Figma 와이어프레임]()  
-[Figma 시안]()
+[Figma 와이어프레임](https://www.figma.com/file/ZAuDaxbOQegx78n7yCO6Jw/%EB%8C%80%EC%A0%84%EC%8B%9C%EB%AF%BC%EC%B2%9C%EB%AC%B8%EB%8C%80%EB%A6%AC%EB%89%B4%EC%96%BC?node-id=62%3A117&t=QAORicnnsmHHNePw-1)  
+[Figma 시안](https://www.figma.com/file/ScLULK2XZ1lvreZfPOb48P/%EC%9D%B4%EC%9D%80%EC%86%94_%EB%8C%80%EC%A0%84%EC%8B%9C%EB%AF%BC%EC%B2%9C%EB%AC%B8%EB%8C%80?node-id=0%3A1&t=bcr2ukGVnG78UJ2l-1)
 
 1. Index
 
 - 와이어 프레임 / 시안  
-   <img src="" alt="" width="250px">
+   <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/wifeFame_PC.jpg?raw=true" alt="" width="200px">
   </img>
-  <img src="" alt="" width="150px"></img>
+  <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/INDEX_PC.jpg?raw=true" alt="" width="280px"></img>
 
 2. Sub_Page
 
 - 와이어 프레임  
-   <img src="" alt="" width="150px"></img>
-  <img src="" alt="" width="340px"></img>
+  <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/prosses_wifeFame.jpg?raw=true" alt="예약페이지와이어프레임" width="1000px"></img>
 
 - 시안  
-  <img src="" alt="" width="150px"></img>
-  <img src="" alt="" width="200px"></img>
-  <img src="" alt="" width="188px"></img>
+  <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/Processes_individual.jpg?raw=true" alt="예약페이지개인" width="800px"></img>
+  <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/Processes_GROUP.jpg?raw=true" alt="예약페이지단체 " width="800px"></img>
 
 3. Mobile_Page
-   - 와이어 프레임 : index페이지 반응형 제작
-   - 시안  
-     <img src="" alt="" width="200px"></img>
+
+   - 와이어 프레임 / 시안
+
+     <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/wifeFame_M.jpg?raw=true" alt="모바일반응형" width="150px"></img>
+     <img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/c37af4ddd619fd10ca42eda05875eaaacbbd74b3/readmeImg/INDEX_M.jpg" alt="" width="100px"></img>
+
+#### 놓친부분
+
+1. prossesPage 뒤로가기 버튼 미생성
 
 ### 데모
