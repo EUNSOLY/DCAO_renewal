@@ -119,6 +119,10 @@ function displayActive(item) {
       // console.log("안개");
       text = "안개";
       iconImg = "Foggy";
+    } else if (weaterReady == "lightrain") {
+      // console.log("안개");
+      text = "맑음/비";
+      iconImg = "Cloudy";
     } else if (
       weaterReady == "Light rain or showers" ||
       weaterReady == "Occasional showers" ||
