@@ -1,8 +1,10 @@
-<img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/2309b66eee13ac17ef0b80a5e4de0e7ce4644f14/img/header_logo.svg" alt="대전시민천문대 로고" width="200px"></img>
-
 # 대전시민천문대 홈페이지 리뉴얼
 
-#### 팀원 : 이은솔, 유상범, 이상희, 서태규
+##### 팀원 : 이은솔, 유상범, 이상희, 서태규
+
+<br/>
+<br/>
+### 데모
 
 ### 🖐 프로젝트 목적
 
@@ -90,4 +92,4 @@
 
 1. prossesPage 뒤로가기 버튼 미생성
 
-### 데모
+<img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/2309b66eee13ac17ef0b80a5e4de0e7ce4644f14/img/header_logo.svg" alt="대전시민천문대 로고" width="200px"></img>
