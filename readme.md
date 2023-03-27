@@ -4,7 +4,10 @@
 
 <br/>
 <br/>
-### 데모
+
+## Mokup
+
+### [데모](https://eunsoly.github.io/DCAO_renewal/index.html)
 
 ### 🖐 프로젝트 목적
 
@@ -23,22 +26,22 @@
 
 ### 🖐 프로젝트 내 사용툴
 
-1. Figma
+> <img src="https://img.shields.io/badge/피그마-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
+> <img src="https://img.shields.io/badge/피그잼-purple?style=flat-square&logo=Figma&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/AdobePhotoshop-31A8FF?style=flat-square&logo=Adobe Photoshop&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/Adobelllustrator-FF9A00?style=flat-square&logo=Adobe Illustrator&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
 
-- Design Tool
-- FigJam
-
-2. Notion
-3. Slack
-4. Adobe Photoshop
-5. Adobe lllustrator
-6. Visual Studio Code
+- Notion
+- Slack
 
 ### 🖐 프로젝트 내 사용언어
 
-<img src="https://simpleicons.org/icons/html5.svg" alt="" width="25px" color="white"></img> HTML  
-<img src="https://simpleicons.org/icons/css3.svg" alt="" width="25px" color="white"></img> CSS  
-<img src="https://simpleicons.org/icons/javascript.svg" alt="" width="25px" color="white"></img> JS
+> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
+
+<br/>
 
 ### 🖐 프로젝트 구현 기능
 
@@ -49,8 +52,6 @@
 5. calender 기능 (기존 코드 css 및 js 소폭 수정)
 6. 아코디언형태의 슬아이드섹션구성
 7. input 정규식 표현 사용하여 제대로 작성됬는지에 대한 검사 기능작성
-
----
 
 ---
 
