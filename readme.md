@@ -3,28 +3,39 @@
 ##### 팀원 : 이은솔, 유상범, 이상희, 서태규
 
 <br/>
-<br/>
+
+# [데모](https://eunsoly.github.io/DCAO_renewal/index.html)
 
 ## Mokup
 
-### [데모](https://eunsoly.github.io/DCAO_renewal/index.html)
+> <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/deajenmoukup.jpg?raw=true"/>
 
-### 🖐 프로젝트 목적
+<br/>
+<br/>
+
+### PC / 반응형
+
+<img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/pc.gif?raw=true" width="400px"/>
+<img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/mobild.gif?raw=true" width="400px"/>
+
+---
+
+## 🖐 프로젝트 목적
 
 1. 홈페이지를 통해 예약하는 소비자들에게 편리한 예약 서비스 제공
 2. 홈페이지 가독성 개선
 
-### 🖐 프로젝트 내용
+## 🖐 프로젝트 내용
 
 대전시민천문대는 index와 예약페이지를 따로 운영하고 있어 소비자가 예약을 하기위해 홈페이지에서 예약창을 찾으러 다니거나 또는 예약창에서도 찾을 수 없는 탭이 있어 체험율이 낮아질 수 있는 부분들을 indexpage로 배치하여 소비자가 보다 예약에 접근하는것이 보다 편리하도록 개선
 
-### 🖐 프로젝트 내 역활
+## 🖐 프로젝트 내 역활
 
 1. 기획 : 25%
 2. 디자인 : 100%
 3. 퍼블리싱 : 100%
 
-### 🖐 프로젝트 내 사용툴
+## 🖐 프로젝트 내 사용툴
 
 > <img src="https://img.shields.io/badge/피그마-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
 > <img src="https://img.shields.io/badge/피그잼-purple?style=flat-square&logo=Figma&logoColor=white"/> 
@@ -35,7 +46,7 @@
 - Notion
 - Slack
 
-### 🖐 프로젝트 내 사용언어
+## 🖐 프로젝트 내 사용언어
 
 > <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> 
 > <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> 
@@ -43,7 +54,7 @@
 
 <br/>
 
-### 🖐 프로젝트 구현 기능
+## 🖐 프로젝트 구현 기능
 
 1. index 팝업존 슬라이드 구현
 2. index 시설안내 탭메뉴
@@ -52,6 +63,10 @@
 5. calender 기능 (기존 코드 css 및 js 소폭 수정)
 6. 아코디언형태의 슬아이드섹션구성
 7. input 정규식 표현 사용하여 제대로 작성됬는지에 대한 검사 기능작성
+
+### 🖐 기획, 구현에서 놓친사항
+
+1. prossesPage 뒤로가기 버튼 미생성
 
 ---
 
@@ -89,8 +104,4 @@
      <img src="https://github.com/EUNSOLY/DCAO_renewal/blob/master/readmeImg/wifeFame_M.jpg?raw=true" alt="모바일반응형" width="150px"></img>
      <img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/c37af4ddd619fd10ca42eda05875eaaacbbd74b3/readmeImg/INDEX_M.jpg" alt="" width="100px"></img>
 
-#### 놓친부분
-
-1. prossesPage 뒤로가기 버튼 미생성
-
-<img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/2309b66eee13ac17ef0b80a5e4de0e7ce4644f14/img/header_logo.svg" alt="대전시민천문대 로고" width="200px"></img>
+<img src="https://raw.githubusercontent.com/EUNSOLY/DCAO_renewal/2309b66eee13ac17ef0b80a5e4de0e7ce4644f14/img/header_logo.svg" alt="대전시민천문대 로고" width="800px"></img>
